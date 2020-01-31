@@ -1,11 +1,11 @@
 <?php
 session_start();
 if(empty ($_SESSION["email"])) {} else {$email=$_SESSION["email"];}
-$conn=mysqli_connect( "localhost", "root", "", "adidas"); 
-mysqli_query($conn, "SET NAMES utf8"); 
+$conn=mysqli_connect("localhost","id12470029_root","password","id12470029_adidas");
+mysqli_query($conn, "SET NAMES utf8");
 $conn->query("set names 'utf8'"); $conn->set_charset("utf8");
 if(empty ($_SESSION["email"])) {} else {
-$result=mysqli_query($conn, "SELECT count(idtrongbangsp) AS total FROM yeuthich WHERE EMAIL='$email'"); 
+$result=mysqli_query($conn, "SELECT count(idtrongbangsp) AS total FROM yeuthich WHERE EMAIL='$email'");
 $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
 }
 ?>
@@ -29,7 +29,7 @@ $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
   <a href="#">theo dõi đơn hàng và trả về<!-- --> </a>
   <div class="menu-spacer___3Gp4L"></div>
   <em><a href="/vn/myaccount/register/">Đăng ký mới<!-- --> </a></em>
-  <a href="/vn/myaccount/login/" href="">Đăng nhập<!-- --> 
+  <a href="/vn/myaccount/login/" href="">Đăng nhập<!-- -->
   <span class="login-icon"></span></a>
 </div>
 
@@ -60,14 +60,14 @@ $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
         <a href="/vn/?men-release-dates">Ngày Phát Hành</a>
         <a href="/vn/?men-sale" style="font-weight: bold; text-transform: uppercase;">GIẢM GIÁ</a>
         <br/>
-        <br/>  
+        <br/>
         <a href="/vn/?men-podsystem">P.O.D.System</a>
         <a href="/vn/?men-adicolor">adicolor</a>
         <a href="/vn/?men-ultraboost">ultraboost</a>
         <a href="/vn/?men-work_out_essentials">Workout Essentials</a>
         <a href="/vn/?men-back_to_school">Back to School</a>
       </div>
-    
+
       <div class="col"> <!-- cột 2 menu 1 -->
         <a style="text-decoration: none"><h2>GIÀY</h2></a>
         <a href="/vn/?men-originals-shoes">Bản Gốc</a>
@@ -85,7 +85,7 @@ $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
         <a href="/vn/?men-customizable">Tùy Chỉnh với miakat</a>
         <a href="/vn/?men-shoes-sale">Giày Giảm Giá</a>
       </div>
-    
+
       <div class="col"> <!-- cột 3 menu 1 -->
         <a style="text-decoration: none"><h2>QUẦN ÁO</h2></a>
         <a href="/vn/?men-pants">Quần Dài</a>
@@ -153,15 +153,15 @@ $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
             <a href="/vn/?womenn-best-seller">Bán Chạy Nhất</a>
             <a href="/vn/?women-release-dates">Ngày Phát Hành</a>
             <a href="/vn/?women-sale" style="font-weight: bold; text-transform: uppercase;">GIẢM GIÁ</a>
-            <br/>     
-            <br/>       
+            <br/>
+            <br/>
             <a href="/vn/?women-podsystem">P.O.D.System</a>
             <a href="/vn/?women-adicolor">adicolor</a>
             <a href="/vn/?women-ultraboost">ultraboost</a>
             <a href="/vn/?women-work_out_essentials">Workout Essentials</a>
             <a href="/vn/?women-back_to_school">Back to School</a>
           </div>
-        
+
           <div class="col"> <!-- cột 2 menu 1 -->
             <a style="text-decoration: none"><h2>GIÀY</h2></a>
             <a href="/vn/?women-originals-shoes">Bản gốc</a>
@@ -177,7 +177,7 @@ $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
             <a href="/vn/?women-customizable">Tùy chỉnh với miadidas</a>
             <a href="/vn/?women-shoes-sale">Giày Giảm Giá</a>
           </div>
-        
+
           <div class="col"> <!-- cột 3 menu 1 -->
             <a style="text-decoration: none"><h2>QUẦN ÁO</h2></a>
             <a href="/vn/?women-hoodies_sweatshirts">Hoodies - áo nỉ</a>
@@ -186,7 +186,7 @@ $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
             <a href="/vn/?women-bras">Áo Ngực Thể Thao</a>
             <a href="/vn/?women-track_suits">Đồ Ra Đường</a>
             <a href="/vn/?women-jackets">Áo khoác</a>
-            <a href="/vn/?women-short_sleeve_shirts">Áo sơ mi ngắn tay</a>           
+            <a href="/vn/?women-short_sleeve_shirts">Áo sơ mi ngắn tay</a>
             <a href="/vn/?women-long_sleeve_shirts">Áo sơ mi dài tay</a>
             <a href="/vn/?women-compression">compression</a> <!-- Bó-->
             <a href="/vn/?women-polo">polos</a> <!-- Mã Cầu-->
@@ -195,7 +195,7 @@ $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
             <a href="/vn/?women-tank_tops">Áo Ba Lỗ</a>
             <a href="/vn/?women-apparel-sale">Quần Áo Giảm Giá</a>
           </div>
-  
+
           <div class="col"> <!-- cột 4 menu 1 -->
             <a style="text-decoration: none"><h2>PHỤ KIỆN</h2></a>
             <a href="/vn/?women-bags">Túi và ba lô</a>
@@ -209,7 +209,7 @@ $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
             <a href="/vn/?women-accessories-grid=true">Tất Cả Phụ Kiện</a>
             <a href="/vn/?women-accessories-sale">Phụ Kiện Giảm Giá</a>
           </div>
-  
+
           <div class="col"> <!-- cột 5 menu 1 -->
             <a style="text-decoration: none"><h2>MÔN</h2></a>
             <a href="/vn/?women-running">Chạy</a>
@@ -226,7 +226,7 @@ $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
             <a href="/vn/?women-lacrosse">Bóng Vợt</a>
             <a href="/vn/?college_gear-women-arizona_state_university">Thiết Bị Trường Học</a>
           </div>
-  
+
         </div>
   </div>
 </li>
@@ -238,53 +238,53 @@ $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
           <div class="col"> <!-- cột 1 menu 3 -->
             <a><h2 style="text-decoration: none">NỔI BẬT</h2></a>
             <a href="/vn/?kids-new_arrivals">Hàng Mới Về</a>
-            <a href="/vn/?kids-best-seller">Bán Chạy Nhất</a>            
+            <a href="/vn/?kids-best-seller">Bán Chạy Nhất</a>
             <a href="/vn/?kids-sale" style="font-weight: bold; text-transform: uppercase;">GIẢM GIÁ</a>
-            <br/>     
-            <br/>     
+            <br/>
+            <br/>
             <a href="/vn/?kids-podsystem">P.O.D. System</a>
             <a href="/vn/?kids-ultraboost">Ultraboost</a>
             <a href="/vn/?kids-adicolor">adicolor</a>
             <a href="/vn/?kids-back_to_school">Back to School</a>
           </div>
-        
+
           <div class="col"> <!-- cột 2 menu 3 -->
             <a href="/vn/?kids-youth" style="text-decoration: none"><h2>TRẺ (8-14)</h2></a>
             <a href="/vn/?kids-boys-youth-shoes">Giày Trai</a>
             <a href="/vn/?kids-girls-youth-shoes">Giày Gái</a>
-            <a style="text-decoration: none; cursor: default;">---</a>   
+            <a style="text-decoration: none; cursor: default;">---</a>
             <a href="/vn/?kids-boys-youth-apparel">Quần Áo Trai</a>
             <a href="/vn/?kids-girls-youth-apparel">Quần Áo Gái</a>
-            <a style="text-decoration: none; cursor: default;">---</a>   
+            <a style="text-decoration: none; cursor: default;">---</a>
             <a href="/vn/?kids-youth-sale">Giảm Giá</a>
-            <a style="text-decoration: none; cursor: default;">---</a>   
+            <a style="text-decoration: none; cursor: default;">---</a>
             <a href="/vn/?kids-youth" style="font-weight: bold">tất cả Trẻ</a>
           </div>
-        
+
           <div class="col"> <!-- cột 3 menu 3 -->
             <a href="/vn/?kids-children" style="text-decoration: none"><h2>TRẺ EM (4-8)</h2></a>
             <a href="/vn/?kids-boys-children-shoes">Giày Trai</a>
             <a href="/vn/?kids-girls-children-shoes">Giày Gái</a>
-            <a style="text-decoration: none; cursor: default;">---</a>   
+            <a style="text-decoration: none; cursor: default;">---</a>
             <a href="/vn/?kids-boys-children-apparel">Quần Áo Trai</a>
             <a href="/vn/?kids-girls-children-apparel">Quần Áo Gái</a>
-            <a style="text-decoration: none; cursor: default;">---</a>   
+            <a style="text-decoration: none; cursor: default;">---</a>
             <a href="/vn/?kids-children-sale">Giảm Giá</a>
-            <a style="text-decoration: none; cursor: default;">---</a>   
+            <a style="text-decoration: none; cursor: default;">---</a>
             <a href="/vn/?kids-children" style="font-weight: bold">tất cả Trẻ Em</a>
           </div>
-  
+
           <div class="col"> <!-- cột 4 menu 3 -->
             <a href="#" style="text-decoration: none"><h2>SƠ SINH - CHẬP CHỮNG (0-4)</h2></a>
             <a href="/vn/?kids-infant_toddler-shoes">Giày</a>
-            <a style="text-decoration: none; cursor: default;">---</a>   
+            <a style="text-decoration: none; cursor: default;">---</a>
             <a href="/vn/?kids-infant_toddler-apparel">Quần Áo</a>
-            <a style="text-decoration: none; cursor: default;">---</a>   
+            <a style="text-decoration: none; cursor: default;">---</a>
             <a href="/vn/?kids-infant_toddler-sale">Giảm Giá</a>
-            <a style="text-decoration: none; cursor: default;">---</a>   
+            <a style="text-decoration: none; cursor: default;">---</a>
             <a href="/vn/?kids-infant_toddler" style="font-weight: bold">Tất Cả Sơ Sinh - Chập Chững</a>
           </div>
-  
+
           <div class="col"> <!-- cột 5 menu 3 -->
             <a href="/vn/?kids-accessories" style="text-decoration: none"><h2>PHỤ KIỆN</h2></a>
             <a href="/vn/?kids-bags">Túi và Ba Lô</a>
@@ -292,7 +292,7 @@ $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
             <a href="/vn/?kids-hats">Mũ - Beanies</a>
             <a href="/vn/?kids-balls">Bóng</a>
           </div>
-  
+
         </div>
   </div>
 </li>
@@ -311,11 +311,11 @@ $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
             <a href="/vn/?running-shoes">Giày</a>
             <a href="/vn/?running-apparel">Quần Áo</a>
             <a href="/vn/?running-accessories">Phụ Kiện</a>
-            <a style="text-decoration: none; cursor: default;">---</a>       
+            <a style="text-decoration: none; cursor: default;">---</a>
             <a href="/vn/?ultraboost">ultraboost</a>
             <a href="/vn/?alphabounce">alphabounce</a>
             <a href="/vn/?shoes-pureboost">Pureboost</a>
-            <a style="text-decoration: none; cursor: default;">---</a>       
+            <a style="text-decoration: none; cursor: default;">---</a>
             <a href="/vn/?running-grid=true" style="font-weight: bold">tất cả Chạy</a>
           </div>
           <!-- \\\\//// -->
@@ -328,12 +328,12 @@ $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
             <a href="/vn/?soccer-shoes">Giày</a>
             <a href="/vn/?soccer-apparel">Quần Áo</a>
             <a href="/vn/?soccer-accessories">Phụ Kiện</a>
-            <a style="text-decoration: none; cursor: default;">---</a>       
+            <a style="text-decoration: none; cursor: default;">---</a>
             <a href="/vn/?Predator">Predator</a>
             <a href="/vn/?X">X</a>
             <a href="/vn/?Nemeziz">Nemeziz</a>
             <a href="/vn/?Copa">Copa</a>
-            <a style="text-decoration: none; cursor: default;">---</a>        
+            <a style="text-decoration: none; cursor: default;">---</a>
             <a href="/vn/?soccer-grid=true" style="font-weight: bold">tất cả soccer</a>
           </div>
           <!-- \\\\//// -->
@@ -346,12 +346,12 @@ $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
             <a href="/vn/?basketball-shoes">Giày</a>
             <a href="/vn/?basketball-apparel">Quần Áo</a>
             <a href="/vn/?basketball-accessories">Phụ Kiện</a>
-            <a style="text-decoration: none; cursor: default;">---</a>       
-            <a style="text-decoration: none; cursor: default;">---</a>     
+            <a style="text-decoration: none; cursor: default;">---</a>
+            <a style="text-decoration: none; cursor: default;">---</a>
             <a href="/vn/?james_harden">James Harden</a>
             <a href="/vn/?damian_lillard">Damian Lillard</a>
             <a href="/vn/?crazy_explosive">Crazy Explosive</a>
-            <a style="text-decoration: none; cursor: default;">---</a>        
+            <a style="text-decoration: none; cursor: default;">---</a>
             <a href="/vn/?basketball-grid=true" style="font-weight: bold">tất cả Bóng Rổ</a>
           </div>
           <!-- \\\\//// -->
@@ -364,11 +364,11 @@ $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
             <a href="/vn/?cleats-football">cleats</a><!--Dày Đinh-->
             <a href="/vn/?football-apparel">Quần Áo</a>
             <a href="/vn/?football-accessories">Phụ Kiện</a>
-            <a style="text-decoration: none; cursor: default;">---</a>       
+            <a style="text-decoration: none; cursor: default;">---</a>
             <a href="/vn/?compression">compression</a>
             <a href="/vn/?men-cleats-football-Freak">Freak cleats</a>
             <a href="/vn/?adizero_5_star">Adizero 5-Star</a>
-            <a style="text-decoration: none; cursor: default;">---</a>       
+            <a style="text-decoration: none; cursor: default;">---</a>
             <a href="/vn/?football-grid=true" style="font-weight: bold">tất cả football</a>
           </div>
           <!-- \\\\//// -->
@@ -389,7 +389,7 @@ $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
             <a href="/vn/?Yoga">Yoga</a>
             <a href="/vn/?weightlifting">Giảm Cân</a>
           </div>
-  
+
         </div>
   </div>
 </li>
@@ -408,11 +408,11 @@ $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
             <a href="/vn/?originals-apparel">Giày</a>
             <a href="/vn/?originals-accessories">Quần Áo</a>
             <a href="/vn/?originals-new-arrivals">Hàng Mới Về</a>
-            <a style="text-decoration: none; cursor: default;">---</a>       
+            <a style="text-decoration: none; cursor: default;">---</a>
             <a href="/vn/?Superstar">Superstar</a>
             <a href="/vn/?Stan Smith">Stan Smith</a>
             <a href="/vn/?NMD">NMD</a>
-            <a style="text-decoration: none; cursor: default;">---</a>       
+            <a style="text-decoration: none; cursor: default;">---</a>
             <a href="/vn/?originals?grid=true" style="font-weight: bold">tất cả adidas originals</a>
           </div>
           <!-- \\\\//// -->
@@ -427,9 +427,9 @@ $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
             <a href="/vn/?women-athletics">Quàn Áo Nữ</a>
             <a href="/vn/?kids-athletics">Quần Áo Trẻ</a>
             <a href="/vn/?athletics-new-arrivals">Hàng Mới Về</a>
-            <a style="text-decoration: none; cursor: default;">---</a>   
+            <a style="text-decoration: none; cursor: default;">---</a>
             <a href="/vn/?zne">Z.N.E.</a>
-            <a style="text-decoration: none; cursor: default;">---</a>   
+            <a style="text-decoration: none; cursor: default;">---</a>
             <a href="/vn/?athletics-apparel?grid=true" style="font-weight: bold">tất cả Athletics</a>
           </div>
           <!-- \\\\//// -->
@@ -444,10 +444,10 @@ $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
             <a href="/vn/?adidas_by_stella_mccartney-apparel">Clothing</a>
             <a href="/vn/?adidas_by_stella_mccartney-accessories">accessories</a>
             <a href="/vn/?adidas_by_stella_mccartney-new-arrivals">Hàng Mới Về</a>
-            <a style="text-decoration: none; cursor: default;">---</a>   
+            <a style="text-decoration: none; cursor: default;">---</a>
             <a href="/vn/?adidas_by_stella_mccartney-tennis">tennis</a>
             <a href="/vn/?adidas_by_stella_mccartney-training">training</a>
-            <a style="text-decoration: none; cursor: default;">---</a>   
+            <a style="text-decoration: none; cursor: default;">---</a>
             <a href="/vn/?adidas_by_stella_mccartney?grid=true" style="font-weight: bold">tất cả adidas bởi Stella McCartney</a>
           </div>
           <!-- \\\\//// -->
@@ -460,10 +460,10 @@ $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
             <a href="/vn/?campus?grid=true">Khuôn viên</a>
             <a href="/vn/?tubular?grid=true">Hình ống</a>
             <a href="/vn/?iconics">Biểu tượng</a>
-            <a style="text-decoration: none; cursor: default;">---</a>   
+            <a style="text-decoration: none; cursor: default;">---</a>
             <a href="/vn/?adicolor">adicolor Clothing</a>
             </div>
-  
+
         </div>
   </div>
 </li>
@@ -489,7 +489,7 @@ $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
             <a href="/vn/?gazelle-customizable">Gazelle</a>
             <a href="/vn/?originals-spzl-customizable">Spezial</a>
             <a href="/vn/?adilaette-customizable">adilette</a>
-            <a style="text-decoration: none; cursor: default;">---</a>       
+            <a style="text-decoration: none; cursor: default;">---</a>
             <a href="/vn/?originals-customizable" style="font-weight: bold">All originals</a>
           </div>
           <!-- \\\\//// -->
@@ -504,7 +504,7 @@ $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
             <a href="/vn/?pureboost-customizable">Pureboost</a>
             <a href="/vn/?adizero-running-customizable">Energy Cloud</a>
             <a href="/vn/?supernova-customizable">Supernova</a>
-            <a style="text-decoration: none; cursor: default;">---</a>     
+            <a style="text-decoration: none; cursor: default;">---</a>
             <a href="/vn/?running-customizable" style="font-weight: bold">All running</a>
           </div>
           <!-- \\\\//// -->
@@ -519,8 +519,8 @@ $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
             <a href="/vn/?crazylight-basketball-customizable">Crazylight Boost</a>
             <a href="/vn/?crazy_explosive-customizable">Crazy Explosive</a>
             <a href="/vn/?mad-basketball-shoes-customizable">Mad Bounce</a>
-            <a style="text-decoration: none; cursor: default;">---</a>   
-            <a href="/vn/?running-customizable" style="font-weight: bold">All basketball</a> 
+            <a style="text-decoration: none; cursor: default;">---</a>
+            <a href="/vn/?running-customizable" style="font-weight: bold">All basketball</a>
           </div>
           <!-- \\\\//// -->
           <!-- COLUMN 4 -->
@@ -532,14 +532,14 @@ $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
             <a href="/vn/?ultraboost_4.0-customizable">ultraboost Multi Color</a>
             <a href="/vn/?football-customizable">Bóng Bàu Dục</a>
             <a href="/vn/?baseball-customizable">Bóng Chày</a>
-            <a style="text-decoration: none; cursor: default;">---</a>    
+            <a style="text-decoration: none; cursor: default;">---</a>
             <a href="/vn/?men-customizable">Tất Cả của Nam</a>
             <a href="/vn/?women-customizable">Tất Cả của Nữ</a>
-            <a style="text-decoration: none; cursor: default;">---</a>    
+            <a style="text-decoration: none; cursor: default;">---</a>
             <a href="/vn/?giftcards">Gift Cards</a>
-            <a style="text-decoration: none; cursor: default;">---</a>    
+            <a style="text-decoration: none; cursor: default;">---</a>
           </div>
-  
+
         </div>
   </div>
   <!-- End contentasset -->

@@ -1,6 +1,6 @@
-<?php 
+<?php
 echo ("<br>");
-/* 
+/*
 men->jerseys
 echo $_SERVER['REQUEST_URI'];
 echo ("<br>");
@@ -13,18 +13,18 @@ echo ("<br>");
   echo $chuoi_tim_sql_2;
 
 
-INSERT INTO 
-`sanpham`(`TENSP`,`ANH`, `ANHHOVER`, `ANHCHITIET`, `GENDER`, `GIABAN`,`PRODUCTTYPE`) 
-VALUES 
+INSERT INTO
+`sanpham`(`TENSP`,`ANH`, `ANHHOVER`, `ANHCHITIET`, `GENDER`, `GIABAN`,`PRODUCTTYPE`)
+VALUES
 ('','',''
 ,'','men','','jerseys')
 
 
 */
-  // Tách các từ cần truy vấn ngăn cách bởi - 
-  // dạng array(2) { [0]=> string(3) "men" [1]=> string(5) "pants" } 
-  
-  
+  // Tách các từ cần truy vấn ngăn cách bởi -
+  // dạng array(2) { [0]=> string(3) "men" [1]=> string(5) "pants" }
+
+
   $m=explode("-",substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], '?') + 1));
   // Biến toàn cục https://www.w3schools.com/php/php_superglobals.asp
   // Tạo chuỗi truy vấn dạng TENSP like 'men' and TENSP like 'pants' and
@@ -36,49 +36,49 @@ VALUES
       $tu=trim($m[$i]);
       if($tu!="")
       {
-          
-        if($tu=="new_arrivals")  { 
+
+        if($tu=="new_arrivals")  {
           $NEW="$tu";
         }
-          
-        if($tu=="men" || $tu=="women" || $tu=="boys" || $tu=="girls" || $tu=="kids")  { 
+
+        if($tu=="men" || $tu=="women" || $tu=="boys" || $tu=="girls" || $tu=="kids")  {
           $GENDER="$tu";
         }
 
-          if($tu=="deerupt" || $tu=="nmd" || $tu=="ultraboost" || $tu=="arkyn" 
-          || $tu=="superstar" || $tu=="alphabounce" || $tu=="pureboost" 
-          || $tu=="Predator" || $tu=="X" || $tu=="nemeziz" || $tu=="copa" || $tu=="crazy_explosive" 
-          || $tu=="stan_smith" || $tu=="zne" || $tu=="eqt" || $tu=="gazelle" || $tu=="campus" 
-          || $tu=="tubular" || $tu=="iconics" || $tu=="adicolor" || $tu=="i_5923" 
-          || $tu=="swift" || $tu=="spzl" || $tu=="adilaette" || $tu=="adizero" 
+          if($tu=="deerupt" || $tu=="nmd" || $tu=="ultraboost" || $tu=="arkyn"
+          || $tu=="superstar" || $tu=="alphabounce" || $tu=="pureboost"
+          || $tu=="Predator" || $tu=="X" || $tu=="nemeziz" || $tu=="copa" || $tu=="crazy_explosive"
+          || $tu=="stan_smith" || $tu=="zne" || $tu=="eqt" || $tu=="gazelle" || $tu=="campus"
+          || $tu=="tubular" || $tu=="iconics" || $tu=="adicolor" || $tu=="i_5923"
+          || $tu=="swift" || $tu=="spzl" || $tu=="adilaette" || $tu=="adizero"
           || $tu=="supernova" || $tu=="mad" || $tu=="podsystem")  {
             $FRANCHISE="$tu";
-            
+
             $chuoi_tim_sql=$chuoi_tim_sql." FRANCHISE like '".$tu."' and";
             //NHƯỢNG QUYỀN THƯƠNG MẠI
           }
 
           if($tu=="originals" || $tu=="athletics" || $tu=="essentials")  {
             $BRAND="$tu";
-            
+
             $chuoi_tim_sql=$chuoi_tim_sql." BRAND like '".$tu."' and";
             //$BRAND=$_GET['BRAND'];NHÃN HIỆU
           }
 
-          if($tu=="running" || $tu=="soccer" || $tu=="basketball" || $tu=="training" 
-          || $tu=="football" || $tu=="outdoor" || $tu=="tennis" 
-          || $tu=="skateboarding" || $tu=="baseball" || $tu=="weightlifting" || $tu=="golf" 
+          if($tu=="running" || $tu=="soccer" || $tu=="basketball" || $tu=="training"
+          || $tu=="football" || $tu=="outdoor" || $tu=="tennis"
+          || $tu=="skateboarding" || $tu=="baseball" || $tu=="weightlifting" || $tu=="golf"
           || $tu=="hockey" || $tu=="lacrosse" || $tu=="yoga" || $tu=="volleyball")  {
             $SPORTS="$tu";
-            
+
             $chuoi_tim_sql=$chuoi_tim_sql." SPORTS like '".$tu."' and";
             //$SPORTS=$_GET['SPORTS'];MÔN THỂ THAO
           }
 
-          if($tu=="cleat" || $tu=="slides" || $tu=="hoodies_sweatshirts" || $tu=="jackets" 
-          || $tu=="short_sleeve_shirts" || $tu=="t_shirts" 
-          || $tu=="long_sleeve_shirts" || $tu=="jerseys" || $tu=="tights" 
-          || $tu=="shorts" || $tu=="tank_tops" || $tu=="underwear" 
+          if($tu=="cleat" || $tu=="slides" || $tu=="hoodies_sweatshirts" || $tu=="jackets"
+          || $tu=="short_sleeve_shirts" || $tu=="t_shirts"
+          || $tu=="long_sleeve_shirts" || $tu=="jerseys" || $tu=="tights"
+          || $tu=="shorts" || $tu=="tank_tops" || $tu=="underwear"
           || $tu=="bags" || $tu=="hats"|| $tu=="socks"|| $tu=="phone_case"|| $tu=="sunglasses"
           || $tu=="balls" || $tu=="watches" || $tu=="gloves" || $tu=="scarves" || $tu==""
           || $tu=="pants" || $tu=="bras" || $tu=="dresses_and_skirts" || $tu=="t_shirts" || $tu=="headbands" || $tu=="beanie")  {
@@ -97,14 +97,14 @@ VALUES
 
           if($tu=="customizable")  {
             $MIADIDAS="$tu";
- 
+
             $chuoi_tim_sql=$chuoi_tim_sql." MIADIDAS like '".$tu."' and";
             //$MIADIDAS=$_GET['MIADIDAS'];
           }
 
           if($tu=="arizona_state_university")  {
             $MIADIDAS="$tu";
- 
+
             $chuoi_tim_sql=$chuoi_tim_sql." TEAMNAME like '".$tu."' and";
             //$MIADIDAS=$_GET['MIADIDAS'];
           }
@@ -146,10 +146,10 @@ VALUES
             $SPORTS="$tu";
           }
 
-          
-          /* 
+
+          /*
           https://www.w3schools.com/sql/sql_like.asp có thể dùng NOT LIKE
-          $sql="SELECT count(IDSP) as total FROM sanpham WHERE TENSP like 'CHUOI' and"; 
+          $sql="SELECT count(IDSP) as total FROM sanpham WHERE TENSP like 'CHUOI' and";
           */
       }
   }
@@ -175,15 +175,15 @@ VALUES
     //$PRODUCTTYPE=$_GET['PRODUCTTYPE']; LOẠI SẢN PHẨM
   }
   if(!empty ($GENDER)){
-  if($GENDER=="men" || $GENDER=="women")  { 
+  if($GENDER=="men" || $GENDER=="women")  {
     $chuoidau=$chuoi_tim_sql;
 
     $chuoi_tim_sql=$chuoi_tim_sql." GENDER like '".$GENDER."' or ";
     $chuoi_tim_sql=$chuoi_tim_sql.$chuoidau." GENDER like '' and";
     //$GENDER=$_GET['GENDER'];GIỚI TÍNH
   }
-  
-  if($GENDER=="boys" || $GENDER=="girls")  { 
+
+  if($GENDER=="boys" || $GENDER=="girls")  {
     $chuoidau=$chuoi_tim_sql;
 
     $chuoi_tim_sql=$chuoi_tim_sql." GENDER like '".$GENDER."' or ";
@@ -191,20 +191,20 @@ VALUES
     //$GENDER=$_GET['GENDER'];GIỚI TÍNH
   }
 
-  if($GENDER=="kids")  { 
+  if($GENDER=="kids")  {
     $chuoidau=$chuoi_tim_sql;
     $chuoi_tim_sql=$chuoi_tim_sql." GENDER like 'boys' or ";
     $chuoi_tim_sql=$chuoi_tim_sql.$chuoidau." GENDER like 'girls' or ";
     $chuoi_tim_sql=$chuoi_tim_sql.$chuoidau." GENDER like 'kids' and";
     //$GENDER=$_GET['GENDER'];GIỚI TÍNH
   }}
-  // Tạo chuỗi truy vấn dạng TENSP like 'men' and TENSP like 'pants' 
-  $m_2=explode(" ",$chuoi_tim_sql);   
+  // Tạo chuỗi truy vấn dạng TENSP like 'men' and TENSP like 'pants'
+  $m_2=explode(" ",$chuoi_tim_sql);
   $chuoi_tim_sql_2="";
   for($i=0;$i<count($m_2)-1;$i++)
   {
       $chuoi_tim_sql_2=$chuoi_tim_sql_2.$m_2[$i]." ";
-  } 
+  }
   /*$GENDER=$_GET['GENDER'];*/
   /*$FRANCHISE=$_GET['FRANCHISE'];
   $BRAND=$_GET['BRAND'];
@@ -214,44 +214,44 @@ VALUES
   $MIADIDAS=$_GET['MIADIDAS'];
   $PARNER=$_GET['PARNER'];*/
 
-	// PHẦN XỬ LÝ PHP 
-	// BƯỚC 1: KẾT NỐI CSDL 
-	$conn=mysqli_connect( "localhost", "root", "", "adidas"); 
-	mysqli_query($conn, "SET NAMES utf8"); 
-	// BƯỚC 2: TÌM TỔNG SỐ RECORDS 
+	// PHẦN XỬ LÝ PHP
+	// BƯỚC 1: KẾT NỐI CSDL
+	$conn=mysqli_connect("localhost","id12470029_root","password","id12470029_adidas");
+	mysqli_query($conn, "SET NAMES utf8");
+	// BƯỚC 2: TÌM TỔNG SỐ RECORDS
   //$result=mysqli_query($conn, 'select count(idsp) as total from sanpham');
 
-  $sql="SELECT count(IDSP) as total FROM sanpham WHERE $chuoi_tim_sql_2"; 
+  $sql="SELECT count(IDSP) as total FROM sanpham WHERE $chuoi_tim_sql_2";
   $result=mysqli_query($conn,$sql);
 
 
-	$row=mysqli_fetch_assoc($result); 
-  $total_records=$row[ 'total']; 
+	$row=mysqli_fetch_assoc($result);
+  $total_records=$row[ 'total'];
 
 
 
-	// BƯỚC 3: TÌM LIMIT VÀ CURRENT_PAGE 
-	$current_page=isset($_GET[ 'page']) ? $_GET[ 'page'] : 1; $limit=48 ; 
-	// BƯỚC 4: TÍNH TOÁN TOTAL_PAGE VÀ START 
-	// tổng số trang 
-	$total_page=ceil($total_records / $limit); 
-	// Giới hạn current_page trong khoảng 1 đến total_page 
+	// BƯỚC 3: TÌM LIMIT VÀ CURRENT_PAGE
+	$current_page=isset($_GET[ 'page']) ? $_GET[ 'page'] : 1; $limit=48 ;
+	// BƯỚC 4: TÍNH TOÁN TOTAL_PAGE VÀ START
+	// tổng số trang
+	$total_page=ceil($total_records / $limit);
+	// Giới hạn current_page trong khoảng 1 đến total_page
 	if ($current_page> $total_page){ $current_page = $total_page; } else if ($current_page
-    < 1){ $current_page=1 ; } 
-	// Tìm Start 
+    < 1){ $current_page=1 ; }
+	// Tìm Start
 	$start = ($current_page - 1) * $limit;
-	// BƯỚC 5: TRUY VẤN LẤY DANH SÁCH TIN TỨC 
-	// Có limit và start rồi thì truy vấn CSDL lấy danh sách tin tức 
-	$sql="SELECT * FROM sanpham WHERE $chuoi_tim_sql_2 ORDER BY TENSP ASC LIMIT $start, $limit"; 
+	// BƯỚC 5: TRUY VẤN LẤY DANH SÁCH TIN TỨC
+	// Có limit và start rồi thì truy vấn CSDL lấy danh sách tin tức
+	$sql="SELECT * FROM sanpham WHERE $chuoi_tim_sql_2 ORDER BY TENSP ASC LIMIT $start, $limit";
 	$result=mysqli_query($conn,$sql);
-?> 
+?>
 <!DOCTYPE html>
 <html>
 
 <head>
 <meta charset="utf-8">
 
-<title><?php 
+<title><?php
 if(!empty ($UNISEX)) echo $UNISEX.' ';
 if(!empty ($GENDER)) echo $GENDER.' ';
 if(!empty ($AGE))echo $AGE.' ';
@@ -304,7 +304,7 @@ if(!empty ($SALE)) echo $SALE.' ';
             <div class="callout-bar last slot-content-contain clearfix ">
                 <img src="/images/0/img/adidas_USP_delivery.png" width="88" height="88" class="base lazyload" />
                 <div class="callout-bar-copy">
-                    <span id="readmore" class="dialog-forgotpassword clear">MIỄN PHÍ VẬN CHUYỂN VÀ MIỄN PHÍ TRẢ LẠI</span>        
+                    <span id="readmore" class="dialog-forgotpassword clear">MIỄN PHÍ VẬN CHUYỂN VÀ MIỄN PHÍ TRẢ LẠI</span>
                 </div>
             </div>
         </div>
@@ -337,7 +337,7 @@ if(!empty ($SALE)) echo $SALE.' ';
 
 <div class="ui-widget-overlay" style="
     display: none;
-    z-index: 1002; 
+    z-index: 1002;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -354,7 +354,7 @@ if(!empty ($SALE)) echo $SALE.' ';
 
 
 
-         
+
 
 
 
@@ -364,7 +364,7 @@ if(!empty ($SALE)) echo $SALE.' ';
 	  <div class="pageinfotop-wrapper ">
 			<div id="breadcrumbs">
 	      <ul id="product-breadcrumb" class="breadcrumbs clearfix " data-component="product/ProductBreadCrumb" data-scope="breadcrumbs">
-		
+
 		      <li class="back">
 			<a id="product-back" class="icon-arrow-left-circle" title="Trở lại"  onclick="goBack()">
       &#10096;Trở lại
@@ -381,190 +381,190 @@ function goBack() {
     window.history.back();
 }
 </script>
-		
-		
+
+
 			<li class="home" data-context="home">
 				<span class="divider">|</span>
 				<a href="/" itemprop="url" title="Trang chủ">Trang chủ</a>
 			</li>
-			
-		
-		
 
-		
-			
-			
-			
-				
-					
-			
-<?php if(!empty ($GENDER)) 
+
+
+
+
+
+
+
+
+
+
+<?php if(!empty ($GENDER))
 echo '
 							<li>
 								<span class="divider">/</span>
-								
+
 									<span data-context="'.$GENDER.'">
-										
-											
+
+
                     <a href="/vn/?'.$GENDER.'" itemprop="url" title="'.$GENDER.'">'.$GENDER.'</a>
-										
-										
+
+
 									</span>
-								
+
               </li> '
 
 ?>
 
 
-<?php if(!empty ($AGE)) 
+<?php if(!empty ($AGE))
 echo '
 							<li>
 								<span class="divider">/</span>
-								
+
 									<span data-context="'.$AGE.'">
-										
-											
+
+
                   <a href="/vn/?'.$AGE.'" itemprop="url" title="'.$AGE.'">'.$AGE.'</a>
-										
-										
+
+
 									</span>
-								
+
               </li> '
 
 ?>
 
-<?php if(!empty ($FRANCHISE)) 
+<?php if(!empty ($FRANCHISE))
 echo '
 							<li>
 								<span class="divider">/</span>
-								
+
 									<span data-context="'.$FRANCHISE.'">
-										
-											
+
+
                   <a href="/vn/?'.$FRANCHISE.'" itemprop="url" title="'.$FRANCHISE.'">'.$FRANCHISE.'</a>
-										
-										
+
+
 									</span>
-								
+
               </li> '
 
 ?>
 
-<?php if(!empty ($BRAND)) 
+<?php if(!empty ($BRAND))
 echo '
 							<li>
 								<span class="divider">/</span>
-								
+
 									<span data-context="'.$BRAND.'">
-										
-											
+
+
                   <a href="/vn/?'.$BRAND.'" itemprop="url" title="'.$BRAND.'">'.$BRAND.'</a>
-										
-										
+
+
 									</span>
-								
+
               </li> '
 
 ?>
 
-<?php if(!empty ($SPORTS)) 
+<?php if(!empty ($SPORTS))
 echo '
 							<li>
 								<span class="divider">/</span>
-								
+
 									<span data-context="'.$SPORTS.'">
-										
-											
+
+
                   <a href="/vn/?'.$SPORTS.'" itemprop="url" title="'.$SPORTS.'">'.$SPORTS.'</a>
-										
-										
+
+
 									</span>
-								
+
               </li> '
 
 ?>
 
-<?php if(!empty ($PRODUCTTYPE)) 
+<?php if(!empty ($PRODUCTTYPE))
 echo '
 							<li>
 								<span class="divider">/</span>
-								
+
 									<span data-context="'.$PRODUCTTYPE.'">
-										
-											
+
+
                   <a href="/vn/?'.$PRODUCTTYPE.'" itemprop="url" title="'.$PRODUCTTYPE.'">'.$PRODUCTTYPE.'</a>
-										
-										
+
+
 									</span>
-								
+
               </li> '
 
 ?>
 
-<?php if(!empty ($PARNER)) 
+<?php if(!empty ($PARNER))
 echo '
 							<li>
 								<span class="divider">/</span>
-								
+
 									<span data-context="'.$PARNER.'">
-										
-											
+
+
                   <a href="/vn/?'.$PARNER.'" itemprop="url" title="'.$PARNER.'">'.$PARNER.'</a>
-										
-										
+
+
 									</span>
-								
+
               </li> '
 
 ?>
 
-<?php if(!empty ($CATEGORY)) 
+<?php if(!empty ($CATEGORY))
 echo '
 							<li>
 								<span class="divider">/</span>
-								
+
 									<span data-context="'.$CATEGORY.'">
-										
-											
+
+
                   <a href="/vn/?'.$CATEGORY.'" itemprop="url" title="'.$CATEGORY.'">'.$CATEGORY.'</a>
-										
-										
+
+
 									</span>
-								
+
               </li> '
 
 ?>
 
-<?php if(!empty ($MIADIDAS)) 
+<?php if(!empty ($MIADIDAS))
 echo '
 							<li>
 								<span class="divider">/</span>
-								
+
 									<span data-context="'.$MIADIDAS.'">
-										
-											
+
+
                   <a href="/vn/?'.$MIADIDAS.'" itemprop="url" title="'.$MIADIDAS.'">'.$MIADIDAS.'</a>
-										
-										
+
+
 									</span>
-								
+
               </li> '
 
 ?>
 
-<?php if(!empty ($SALE)) 
+<?php if(!empty ($SALE))
 echo '
 							<li>
 								<span class="divider">/</span>
-								
+
 									<span data-context="'.$SALE.'">
-										
-											
+
+
                   <a href="/vn/?'.$SALE.'" itemprop="url" title="'.$SALE.'">'.$SALE.'</a>
-										
-										
+
+
 									</span>
-								
+
               </li> '
 
 ?>
@@ -572,22 +572,22 @@ echo '
 <!--GENDER AGE FRANCHISE BRAND SPORTS PRODUCTTYPE PARNER CATEGORY MIADIDAS-->
 
 
-					
-				
-			
-		
+
+
+
+
 	</ul>
 
 
 			</div>
-		
+
 <br>
 		<div class="page-heading clearfix">
 			<div class="rbk-page-heading">
 				<div class="rbk-heading-wrapper">
-					
+
         <h1>
-        <?php 
+        <?php
         if(!empty ($GENDER)) echo $GENDER;
         if(!empty ($AGE)) echo ' • '.$AGE;
         if(!empty ($FRANCHISE))echo ' • '.$FRANCHISE;
@@ -609,12 +609,12 @@ $FRANCHISE=$_GET['FRANCHISE'];++
   $MIADIDAS=$_GET['MIADIDAS'];
   $PARNER=$_GET['PARNER'];*/
         ?>
-        </h1>		 
-					<p class="count">			
-<?php 
-    // PHẦN HIỂN THỊ TIN TỨC 
-    // BƯỚC 6: HIỂN THỊ sp 
-if(!empty($NEW)) {while ($row=mysqli_fetch_assoc($result)) 
+        </h1>
+					<p class="count">
+<?php
+    // PHẦN HIỂN THỊ TIN TỨC
+    // BƯỚC 6: HIỂN THỊ sp
+if(!empty($NEW)) {while ($row=mysqli_fetch_assoc($result))
 { // Mở PHP
 $date1=date_create($row['NGAYPHATHANH']);
 $date2=new DateTime();
@@ -623,12 +623,12 @@ $day=$diff->format("%R%a");
 if ($day>31) $total_records-=1;
 }}
 ?>
-							(<?php if(!empty ($total_records)) echo $total_records; else echo '0';?> Sản Phẩm)		
+							(<?php if(!empty ($total_records)) echo $total_records; else echo '0';?> Sản Phẩm)
 					</p>
 				</div>
 			</div>
 		</div>
-		
+
 	</div>
 </div>
 
@@ -640,29 +640,29 @@ if ($day>31) $total_records-=1;
 <h3 style="border-bottom: 1px solid #c8cbcc;height: 3em;line-height: 1em;font-weight: bold;font-size: 16px;">LỰA CHỌN CỦA BẠN</h3>
 <br>
 <br>
-<?php 
+<?php
 if(!empty ($GENDER)){
-if($GENDER=='boys' || $GENDER=='girls' || $GENDER=='kids'){ 
+if($GENDER=='boys' || $GENDER=='girls' || $GENDER=='kids'){
   echo '<div style="font-size: 13px;float:left">&nbsp;&nbsp;<span style="font-weight: bold;">GIỚI TÍNH</span>:&nbsp;kids</div>';
   echo'<br>';
   echo'<br>';}
-if ($GENDER!='kids'){ 
+if ($GENDER!='kids'){
 echo '<div style="font-size: 13px;float:left">&nbsp;&nbsp;<span style="font-weight: bold;">GIỚI TÍNH</span>:&nbsp;'.$GENDER.'</div>';
 echo'<br>';
 echo'<br>';}}
-if(!empty ($AGE)){ 
+if(!empty ($AGE)){
 echo '<div style="font-size: 13px;float:left">&nbsp;&nbsp;<span style="font-weight: bold;">LỨA TUỔI</span>:&nbsp;'.$AGE.'</div>';
 echo'<br>';
 echo'<br>';}
-if(!empty ($FRANCHISE)){ 
+if(!empty ($FRANCHISE)){
 echo '<div style="font-size: 13px;float:left">&nbsp;&nbsp;<span style="font-weight: bold;">DÒNG</span>:&nbsp;'.$FRANCHISE.'</div>';
 echo'<br>';
 echo'<br>';}
-if(!empty ($BRAND)){ 
+if(!empty ($BRAND)){
 echo '<div style="font-size: 13px;float:left">&nbsp;&nbsp;<span style="font-weight: bold;">NHÃN HIỆU</span>:&nbsp;'.$BRAND.'</div>';
 echo'<br>';
 echo'<br>';}
-if(!empty ($SPORTS)){ 
+if(!empty ($SPORTS)){
 echo '<div style="font-size: 13px;float:left">&nbsp;&nbsp;<span style="font-weight: bold;">MÔN</span>:&nbsp;'.$SPORTS.'</div>';
 echo'<br>';
 echo'<br>';}
@@ -670,7 +670,7 @@ if(!empty ($PRODUCTTYPE)){
 echo '<div style="font-size: 13px;float:left">&nbsp;&nbsp;<span style="font-weight: bold;">LOẠI SẢN PHẨM</span>:&nbsp;'.$PRODUCTTYPE.'</div>';
 echo'<br>';
 echo'<br>';}
-if(!empty ($PARNER)){ 
+if(!empty ($PARNER)){
 echo '<div style="font-size: 13px;float:left">&nbsp;&nbsp;<span style="font-weight: bold;">ĐỐI TÁC</span>:&nbsp;'.$PARNER.'</div>';
 echo'<br>';
 echo'<br>';}
@@ -692,8 +692,8 @@ if(!empty ($SALE)){
 <div class="pagination">
 <div style="float:left; margin-left:0px">Sắp xếp theo: Tên sản phẩm [A-Z]</div>
 <div style="float:left; margin-left:140px">Xem: 48</div>
-  Trang: 
-    	<?php 
+  Trang:
+    	<?php
         // PHẦN HIỂN THỊ PHÂN TRANG
        	// BƯỚC 7: HIỂN THỊ PHÂN TRANG
      // nếu current_page > 1 và total_page > 1 mới hiển thị nút prev
@@ -719,18 +719,18 @@ if(!empty ($SALE)){
 </div>
 
     	<!-- lặp lấy sản phẩm -->
-<?php 
-		// PHẦN HIỂN THỊ TIN TỨC 
-		// BƯỚC 6: HIỂN THỊ sp 
-  $sql="SELECT * FROM sanpham WHERE $chuoi_tim_sql_2 ORDER BY TENSP ASC LIMIT $start, $limit"; 
+<?php
+		// PHẦN HIỂN THỊ TIN TỨC
+		// BƯỚC 6: HIỂN THỊ sp
+  $sql="SELECT * FROM sanpham WHERE $chuoi_tim_sql_2 ORDER BY TENSP ASC LIMIT $start, $limit";
   $result=mysqli_query($conn,$sql);
 
 
-    if(!empty($total_page)) {while ($row=mysqli_fetch_assoc($result)) 
+    if(!empty($total_page)) {while ($row=mysqli_fetch_assoc($result))
 { // Mở PHP
-		$giaban=$row['GIABAN']; 
+		$giaban=$row['GIABAN'];
 		$giagoc=$row['GIAGOC'];
-    
+
     $date1=date_create($row['NGAYPHATHANH']);
 $date2=new DateTime();
 $diff=date_diff($date1,$date2);
@@ -738,7 +738,7 @@ $day=$diff->format("%R%a");
 
 ?>
 <div style="<?php if (!empty($NEW)&&($day>31)) echo 'display: none;'?>">
-<a href="/vn/product/?slot=<?php echo $row['IDSP'] ?>">   
+<a href="/vn/product/?slot=<?php echo $row['IDSP'] ?>">
 <div class="product">
 
   <div class="gl-product-card">
@@ -760,7 +760,7 @@ if ($day<0) echo 'sắp có';
         if(empty($row['AGE']) or $row['AGE']!='infant_toddler'){
             if ($row['GENDER']=="kids"){echo $row['GENDER'].' unisex ';} else {
                 if ($row['GENDER']!="" && $row['GENDER']!="boys" && $row['GENDER']!="girls") echo  $row['GENDER'].'\'s'.' '; else echo  $row['GENDER'].' ';}
-        } 
+        }
         else {
             echo 'infants ';}
         if(!empty($row['BRAND'])) echo $row['BRAND'].' ';
@@ -769,21 +769,21 @@ if ($day<0) echo 'sắp có';
     <br>
     <h3>
     <span id="red"
-        <?php if(!empty($giagoc)) echo "style=\"color: red\""?>>  
-        <?php  echo number_format($giaban*23000,0,".",","),"₫"?> 
+        <?php if(!empty($giagoc)) echo "style=\"color: red\""?>>
+        <?php  echo number_format($giaban*23000,0,".",","),"₫"?>
         </span><strike><?php if(!empty($giagoc))  echo number_format($giagoc*23000,0,".",","),"₫"?></strike>
     </span></h3>
-</div>		
-</a>    
-</div> 
-<?php 
+</div>
+</a>
+</div>
+<?php
 }} // Đóng PHP
 ?>
 <div class="pagination">
 <div style="float:left; margin-left:0px">Sắp xếp theo: Tên sản phẩm [A-Z]</div>
 <div style="float:left; margin-left:140px">Xem: 48</div>
-  Trang: 
-    	<?php 
+  Trang:
+    	<?php
         // PHẦN HIỂN THỊ PHÂN TRANG
        	// BƯỚC 7: HIỂN THỊ PHÂN TRANG
      // nếu current_page > 1 và total_page > 1 mới hiển thị nút prev
@@ -811,10 +811,10 @@ if ($day<0) echo 'sắp có';
 </main>
 
 <div w3-include-html="/vn/include/footer.html"></div>
-				
+
         <script>
           includeHTML();
         </script>
-    
+
     </body>
     </html>

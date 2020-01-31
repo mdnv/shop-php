@@ -1,9 +1,9 @@
-<?php 
-$conn=mysqli_connect( "localhost", "root", "", "adidas"); 
-mysqli_query($conn, "SET NAMES utf8"); 
+<?php
+$conn=mysqli_connect("localhost","id12470029_root","password","id12470029_adidas");
+mysqli_query($conn, "SET NAMES utf8");
 $resetpasswordtoken=$_GET['resetpasswordtoken'];
-       
-?> 
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -71,19 +71,19 @@ $resetpasswordtoken=$_GET['resetpasswordtoken'];
     <br>
 
     <h2>ĐẶT MẬT KHẨU MỚI</h2>
-    
-    
-
-    
 
 
 
-    
-    
+
+
+
+
+
+
     <br>
-<form name="form1" method="post" action="server.php?resetpasswordtoken=<?php echo $resetpasswordtoken?>">  
+<form name="form1" method="post" action="server.php?resetpasswordtoken=<?php echo $resetpasswordtoken?>">
 <p>Bên dưới, bạn có thể đặt mật khẩu mới và sau đó bạn sẽ đăng nhập vào tài khoản của mình</p>
-    <input class="materialize-element-field" type="password" id="dwfrm_login_password" name="newPassword" type="text" required="required" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" >	
+    <input class="materialize-element-field" type="password" id="dwfrm_login_password" name="newPassword" type="text" required="required" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" >
     <span class="materialize-element-btn" onclick="myFunction()"></span>
     <script>
         function myFunction() {

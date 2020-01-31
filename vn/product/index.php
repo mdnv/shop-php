@@ -1,8 +1,8 @@
-<?php 
+<?php
 echo '<br>';
 session_start();
-$conn=mysqli_connect( "localhost", "root", "", "adidas"); 
-mysqli_query($conn, "SET NAMES utf8"); 
+$conn=mysqli_connect("localhost","id12470029_root","password","id12470029_adidas");
+mysqli_query($conn, "SET NAMES utf8");
 $id=$_GET['slot'];
 //RECENTLY VIEWED ITEMS
 /* unset cookies
@@ -66,29 +66,29 @@ setcookie('2', $cookie1, time() + (86400 * 30), "/"); // 86400 = 1 day
 setcookie('1', $id, time() + (86400 * 30), "/"); // 86400 = 1 day
 
 }
-$sql="select * from sanpham where IDSP=$id"; 
-$query=mysqli_query($conn,$sql); 
-while($row=mysqli_fetch_array($query)) 
+$sql="select * from sanpham where IDSP=$id";
+$query=mysqli_query($conn,$sql);
+while($row=mysqli_fetch_array($query))
 {
     if(!empty ($row['TENSP'])) $TENSP = $row['TENSP'] ;
     if(!empty ($row['COLOR'])) $COLOR = $row['COLOR'] ;
     if(!empty ($row['COLORDT'])) $COLORDT = $row['COLORDT'] ;
     if(!empty ($row['GENDER'])) $GENDER = $row['GENDER'] ;
     if(!empty ($row['AGE'])) $AGE = $row['AGE'] ;
-    if(!empty ($row['FRANCHISE'])) $FRANCHISE = $row['FRANCHISE'] ;            
-    if(!empty ($row['PRODUCTTYPE'])) $PRODUCTTYPE = $row['PRODUCTTYPE'] ;            
-    if(!empty ($row['BRAND'])) $BRAND = $row['BRAND'] ;           
-    if(!empty ($row['CATEGORY'])) $CATEGORY = $row['CATEGORY'] ;          
+    if(!empty ($row['FRANCHISE'])) $FRANCHISE = $row['FRANCHISE'] ;
+    if(!empty ($row['PRODUCTTYPE'])) $PRODUCTTYPE = $row['PRODUCTTYPE'] ;
+    if(!empty ($row['BRAND'])) $BRAND = $row['BRAND'] ;
+    if(!empty ($row['CATEGORY'])) $CATEGORY = $row['CATEGORY'] ;
     if(!empty ($row['SPORTS'])) $SPORTS = $row['SPORTS'] ;
     if(!empty ($row['DESCRIPTION_H5'])) $DESCRIPTION_H5 = $row['DESCRIPTION_H5'] ;else $DESCRIPTION_H5="";
     if(!empty ($row['DESCRIPTION_P'])) $DESCRIPTION_P = $row['DESCRIPTION_P'] ;else $DESCRIPTION_P="";
     if(!empty ($row['SPECIFICATIONS'])) $SPECIFICATIONS = $row['SPECIFICATIONS'] ;else $SPECIFICATIONS="";
 
     if(!empty ($row['CARE'])) $CARE = $row['CARE'] ;else $CARE="";
-    
-    
-    $ANHCHITIET=$row['ANHCHITIET']; 
-    $giaban=$row['GIABAN']; 
+
+
+    $ANHCHITIET=$row['ANHCHITIET'];
+    $giaban=$row['GIABAN'];
     $giagoc=$row['GIAGOC'];
 date_default_timezone_set("Asia/Bangkok");
     $date1=date_create($row['NGAYPHATHANH']);
@@ -96,8 +96,8 @@ $date2=new DateTime();
 $diff=date_diff($date1,$date2);
 $day=$diff->format("%R%a");
 
-}       
-?> 
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -144,7 +144,7 @@ $day=$diff->format("%R%a");
             <div class="callout-bar last slot-content-contain clearfix ">
                 <img src="/images/0/img/adidas_USP_delivery.png" width="88" height="88" class="base lazyload" />
                 <div class="callout-bar-copy">
-                    <span id="readmore" class="dialog-forgotpassword clear">MIỄN PHÍ VẬN CHUYỂN VÀ MIỄN PHÍ TRẢ LẠI</span>        
+                    <span id="readmore" class="dialog-forgotpassword clear">MIỄN PHÍ VẬN CHUYỂN VÀ MIỄN PHÍ TRẢ LẠI</span>
                 </div>
             </div>
         </div>
@@ -177,7 +177,7 @@ $day=$diff->format("%R%a");
 
 <div class="ui-widget-overlay" style="
     display: none;
-    z-index: 1002; 
+    z-index: 1002;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -191,7 +191,7 @@ $day=$diff->format("%R%a");
 <div id="topdivv">
 
 </div>
-     
+
 
 <div data-auto-id="glass-breadcrumbs" class="gl-hidden-s-m breadcrumb___2DviW">
     <div class="container breadcrumb_container___1L_9x">
@@ -205,70 +205,70 @@ function goBack() {
             <li property="itemListElement" typeof="ListItem"><span class="spacer___19Hw0 gl-body--small">|</span><a property="item" typeof="WebPage" href="/" class="gl-link gl-body--small"><span property="name">Trang chủ</span></a>
                 <meta property="position" content="1">
             </li>
-<?php if(!empty ($GENDER)) 
+<?php if(!empty ($GENDER))
 echo '
             <li property="itemListElement" typeof="ListItem"><span class="gl-icon icon icon-arrow-right caret___1VEpD icon--size-xs"></span><a class="gl-link gl-body--small" property="item" typeof="WebPage" href="/vn/?'.$GENDER.'" manual_cm_sp="breadcrumb-_-usmen"><span property="name">'.$GENDER.'</span></a>
                 <meta
                     property="position" content="2">
             </li>
 '?>
-<?php if(!empty ($AGE)) 
+<?php if(!empty ($AGE))
 echo '
             <li property="itemListElement" typeof="ListItem"><span class="gl-icon icon icon-arrow-right caret___1VEpD icon--size-xs"></span><a class="gl-link gl-body--small" property="item" typeof="WebPage" href="/vn/?'.$AGE.'" manual_cm_sp="breadcrumb-_-usmen"><span property="name">'.$AGE.'</span></a>
                 <meta
                     property="position" content="2">
             </li>
 '?>
-<?php if(!empty ($FRANCHISE)) 
+<?php if(!empty ($FRANCHISE))
 echo '
             <li property="itemListElement" typeof="ListItem"><span class="gl-icon icon icon-arrow-right caret___1VEpD icon--size-xs"></span><a class="gl-link gl-body--small" property="item" typeof="WebPage" href="/vn/?'.$FRANCHISE.'" manual_cm_sp="breadcrumb-_-usmen"><span property="name">'.$FRANCHISE.'</span></a>
                 <meta
                     property="position" content="2">
             </li>
 '?>
-<?php if(!empty ($BRAND)) 
+<?php if(!empty ($BRAND))
 echo '
             <li property="itemListElement" typeof="ListItem"><span class="gl-icon icon icon-arrow-right caret___1VEpD icon--size-xs"></span><a class="gl-link gl-body--small" property="item" typeof="WebPage" href="/vn/?'.$BRAND.'" manual_cm_sp="breadcrumb-_-usmen"><span property="name">'.$BRAND.'</span></a>
                 <meta
                     property="position" content="2">
             </li>
 '?>
-<?php if(!empty ($SPORTS)) 
+<?php if(!empty ($SPORTS))
 echo '
             <li property="itemListElement" typeof="ListItem"><span class="gl-icon icon icon-arrow-right caret___1VEpD icon--size-xs"></span><a class="gl-link gl-body--small" property="item" typeof="WebPage" href="/vn/?'.$SPORTS.'" manual_cm_sp="breadcrumb-_-usmen"><span property="name">'.$SPORTS.'</span></a>
                 <meta
                     property="position" content="2">
             </li>
 '?>
-<?php if(!empty ($PRODUCTTYPE)) 
+<?php if(!empty ($PRODUCTTYPE))
 echo '
             <li property="itemListElement" typeof="ListItem"><span class="gl-icon icon icon-arrow-right caret___1VEpD icon--size-xs"></span><a class="gl-link gl-body--small" property="item" typeof="WebPage" href="/vn/?'.$PRODUCTTYPE.'" manual_cm_sp="breadcrumb-_-usmen"><span property="name">'.$PRODUCTTYPE.'</span></a>
                 <meta
                     property="position" content="2">
             </li>
 '?>
-<?php if(!empty ($PARNER)) 
+<?php if(!empty ($PARNER))
 echo '
             <li property="itemListElement" typeof="ListItem"><span class="gl-icon icon icon-arrow-right caret___1VEpD icon--size-xs"></span><a class="gl-link gl-body--small" property="item" typeof="WebPage" href="/vn/?'.$PARNER.'" manual_cm_sp="breadcrumb-_-usmen"><span property="name">'.$PARNER.'</span></a>
                 <meta
                     property="position" content="2">
             </li>
 '?>
-<?php if(!empty ($CATEGORY)) 
+<?php if(!empty ($CATEGORY))
 echo '
             <li property="itemListElement" typeof="ListItem"><span class="gl-icon icon icon-arrow-right caret___1VEpD icon--size-xs"></span><a class="gl-link gl-body--small" property="item" typeof="WebPage" href="/vn/?'.$CATEGORY.'" manual_cm_sp="breadcrumb-_-usmen-_-apparel"><span property="name">'.$CATEGORY.'</span></a>
                 <meta
                     property="position" content="3">
             </li>
 '?>
-<?php if(!empty ($MIADIDAS)) 
+<?php if(!empty ($MIADIDAS))
 echo '
             <li property="itemListElement" typeof="ListItem"><span class="gl-icon icon icon-arrow-right caret___1VEpD icon--size-xs"></span><a class="gl-link gl-body--small" property="item" typeof="WebPage" href="/vn/?'.$MIADIDAS.'" manual_cm_sp="breadcrumb-_-usmen-_-apparel"><span property="name">'.$MIADIDAS.'</span></a>
                 <meta
                     property="position" content="3">
             </li>
 '?>
-<?php if(!empty ($TENSP)) 
+<?php if(!empty ($TENSP))
 echo '
             <li><span class="gl-icon icon icon-arrow-right caret___1VEpD icon--size-xs"></span><span class="gl-body--small">'.$TENSP.'</span></li>
 '?>
@@ -276,7 +276,7 @@ echo '
     </div>
 </div>
 
-<!------------------------------------------------------------------------------------------ -->     
+<!------------------------------------------------------------------------------------------ -->
 
 <div data-auto-id="glass-image-viewer" class="glass_image_viewer___3pD5T" style="background-color: #eceef0;
     background-size: 50% 100%!important;">
@@ -384,9 +384,9 @@ if ($day<0) echo 'sắp có';
 
 <div>
     <div class="gl-vspacing-l thumbnails_container___3SJWq thumbnails_container__control" style="left:35px;width: 80px; max-height: 320px;overflow-y: scroll;">
-                
 
-        
+
+
 <div class="thumbnail___3g19J thumbnail__control" style="transform: translate(0px, 0px);border-bottom: 2px solid #000;">
 <img data-auto-id="image" src="/images/<?php echo $id?>/<?php echo $id?>dt1.jpg" id="thumbnail_1" alt="" onclick="myFunction(this);"></div>
 
@@ -468,33 +468,33 @@ imageZoom("expandedImg", "myresult");
 <meta itemprop="url" content="https://www.adidas.com/us/tiro-17-training-pants/BS3693.html"></div>
 <div class="product_information___1Tt1L gl-vspacing-m">
     <div class="product_rating_starts_container gl-vspacing-s">
-<!-------------------------------------------------------------------------------------------------->  
+<!-------------------------------------------------------------------------------------------------->
 <?php
-$sql="SELECT count(postid) as totalreviews FROM comments WHERE postid='$id'"; 
+$sql="SELECT count(postid) as totalreviews FROM comments WHERE postid='$id'";
   $result=mysqli_query($conn,$sql);
 
 
-    $row=mysqli_fetch_assoc($result); 
-  $total_reviews=$row[ 'totalreviews']; 
-?>    
+    $row=mysqli_fetch_assoc($result);
+  $total_reviews=$row[ 'totalreviews'];
+?>
         <div class="product_reviews___IhPrB">
-            
+
         <span data-auto-id="product-rating-review-count">
-        <a class="gl-hidden-s-m gl-link gl-body--small gl-no-margin-bottom" onclick="scrollWin()"> 
+        <a class="gl-hidden-s-m gl-link gl-body--small gl-no-margin-bottom" onclick="scrollWin()">
 <script>
 function scrollWin() {
     window.scrollTo(0,1250);
 }
 </script>
 
-<?php 
+<?php
 if(!empty($total_reviews)) echo 'Đọc tất cả '.$total_reviews.' đánh giá';else  echo 'Viết Đánh Giá';
-?> 
+?>
 </a></span></div></div><div data-auto-id="product-category">
 <!-------------------------------------------------------------------------------------------------->
         <div class="subtitle___2z5HL gl-label gl-label--large">
         <?php
-        
+
         if(empty($AGE) or $AGE!='infant_toddler'){
             if(!empty($GENDER)) {
             if ($GENDER=="kids"){echo $GENDER.' unisex ';} else {
@@ -506,32 +506,32 @@ if(!empty($total_reviews)) echo 'Đọc tất cả '.$total_reviews.' đánh gi�
         if(!empty($SPORTS)) echo $SPORTS;
         ?>
         </div></div>
-        
+
         <h1 data-auto-id="product-title" class="product_information_title___2rG9M product_title gl-heading gl-heading--m gl-heading--black"><?php echo $TENSP?></h1>
-        
+
         <div class="gl-price-container"><span class="gl-price"
         <?php if(!empty($giagoc)) echo "style=\"color: red\""?>>
-        
+
         <?php  echo number_format($giaban*23000,0,".",","),"₫"?>
-        
+
         </span><strike><?php if(!empty($giagoc))  echo number_format($giagoc*23000,0,".",","),"₫"?></strike></div></div>
-        
-        
-    
+
+
+
     </div>
-<!------------------------------------------------------------------------------------------ --> 
+<!------------------------------------------------------------------------------------------ -->
     <div data-auto-id="color-chooser" class="gl-vspacing-l wrapper___2M6MI">
         <h5 class="color_variation_title___2Zf7T">MÀU SẮC CÓ SẴN</h5>
         <div class="gl-label gl-label--large gl-vspacing-s color_text___mgoYV">
-            <?php if (!empty($COLORDT)) echo $COLORDT?>  
+            <?php if (!empty($COLORDT)) echo $COLORDT?>
         </div>
         <div class="wrapper-full-width___1NpMw" data-abtest-atp-1231="control">
             <div class="wrapper-inner___I9yBh">
-                <?php 
+                <?php
                     if(empty($GENDER)) $GENDER="";
-                    $sql="SELECT * FROM sanpham WHERE TENSP='$TENSP' AND GENDER='$GENDER'"; 
+                    $sql="SELECT * FROM sanpham WHERE TENSP='$TENSP' AND GENDER='$GENDER'";
                     $result=mysqli_query($conn,$sql);
-                    while ($row=mysqli_fetch_assoc($result)) { 
+                    while ($row=mysqli_fetch_assoc($result)) {
                 ?>
                 <div class="color_variation___3RVtF active___14GDh">
                     <a href="/vn/product/?slot=<?php echo $row['IDSP'] ?>">
@@ -539,17 +539,17 @@ if(!empty($total_reviews)) echo 'Đọc tất cả '.$total_reviews.' đánh gi�
                         </div>
                     </a>
                 </div>
-                <?php 
-                    } 
-                ?>           
+                <?php
+                    }
+                ?>
             </div>
         </div>
     </div>
-<!------------------------------------------------------------------------------------------ --> 
+<!------------------------------------------------------------------------------------------ -->
     <div>
 
     </div>
-    
+
     <!-- old form -->
     <div class="add_to_bag_form___227O2" style="<?php if ($day<0) echo 'display:none;'?>" >
     <!--
@@ -557,7 +557,7 @@ if(!empty($total_reviews)) echo 'Đọc tất cả '.$total_reviews.' đánh gi�
         <div class="gl-link"><span class="gl-icon icon icon-ruler ruler_icon___GgvPD icon--size-m"></span>size chart</div>
     </div>
     <div class="row no-gutters size_quantity_row___1pgH7">
-        
+
                     <select class="gl-dropdown__select label dropdown-select" data-abtest-atp-1200="variant1" class="gl-dropdown__select-element" aria-label="Select size">
                         <option style="display:none">chọn kích cỡ</option>
 
@@ -565,7 +565,7 @@ if(!empty($total_reviews)) echo 'Đọc tất cả '.$total_reviews.' đánh gi�
                         <option value="2">M</option><option value="3">L</option>
                         <option value="4">XL</option><option value="5">2XL</option>
                     </select>
-                
+
 <select class="gl-dropdown__select label dropdown-select" data-abtest-atp-1200="variant1" class="gl-dropdown__select-element" aria-label="Select size">
                     <option style="display:none">số lượng</option>
     <option value="0">1</option>
@@ -584,12 +584,12 @@ if(!empty($total_reviews)) echo 'Đọc tất cả '.$total_reviews.' đánh gi�
     <option value="13">14</option>
     <option value="14">15</option>
 </select>
-                    
+
     </div>-->
     <div class="row no-gutters add_to_bag_container___16ts0">
 
 
-<?php if(empty ($_SESSION["email"])) echo '<form action="/vn/myaccount/login/" method="post">'?> 
+<?php if(empty ($_SESSION["email"])) echo '<form action="/vn/myaccount/login/" method="post">'?>
 <script>
 function showUserr(str) {
   if (window.XMLHttpRequest) {
@@ -601,7 +601,7 @@ function showUserr(str) {
   xmlhttp.open("GET","xulythem.php?slot="+str,true);
   xmlhttp.send();
 }
-</script> 
+</script>
         <button type="submit" onclick="showUserr(<?php echo $id?>)" aria-label="Add To Bag" class="gl-cta btn-bag gl-cta--primary gl-cta--full-width">
                 Thêm vào túi
             <span class="gl-icon icon icon-arrow-right-long gl-cta__icon icon--size-l"></span>
@@ -633,15 +633,15 @@ function showUser(str) {
 <div class="gl-cta gl-cta--icon wishlist___31HQW" onclick="showUser(<?php echo $id?>)">
                 <span class="gl-icon icon <?php
                 $email=$_SESSION["email"];
-                $coon=mysqli_connect("localhost","root","","adidas");
+                $coon=mysqli_connect("localhost","id12470029_root","password","id12470029_adidas");
                 mysqli_query($coon,"SET NAMES utf8");
-                $result=mysqli_query($coon, "SELECT count(idtrongbangsp) AS total FROM yeuthich 
-                WHERE idtrongbangsp='$id' and EMAIL='$email'"); 
+                $result=mysqli_query($coon, "SELECT count(idtrongbangsp) AS total FROM yeuthich
+                WHERE idtrongbangsp='$id' and EMAIL='$email'");
                 $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
                 $sql = "insert into yeuthich (idtrongbangsp,EMAIL) values ('$id','$email')";
                 if($total_records!=0) echo
                 'icon-heart'; else echo
-                'icon-heart-empty'; 
+                'icon-heart-empty';
                 ?> icon--size-m"></span>
 </div>
 </button>
@@ -650,10 +650,10 @@ function showUser(str) {
 
 
     </div>
-    
+
     <div style="cursor: pointer;">
     <div class="sizechart_link___dRZCk">
-        
+
             <span class="gl-icon icon icon-delivery icon--size-l"></span>
         <br>
         <div class="gl-label gl-label--large" >MIỄN PHÍ VẬN CHUYỂN VÀ MIỄN PHÍ TRẢ LẠI</div>
@@ -669,7 +669,7 @@ function showUser(str) {
   // Get the <span> element that closes the modal
   var span = document.getElementsByClassName("ui-icon-closethick")[0];
 
-  // When the user clicks the button, open the modal 
+  // When the user clicks the button, open the modal
   btn.onclick = function() {
     modal.style.display = "block";
     overlay.style.display = "block";
@@ -688,7 +688,7 @@ function showUser(str) {
         overlay.style.display = "none";
     }
   }
-</script>  
+</script>
     </div>
     </div>
     <!--end old form -->
@@ -708,7 +708,7 @@ function showUser(str) {
                 </div>
             </div>
         </span>
-</div>        
+</div>
 
 <!------------------------------------------------------------------------------------------ -->
 
@@ -716,19 +716,19 @@ function showUser(str) {
     <h3 class="gl-vspacing-l">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;thông tin chi tiết sản phẩm</h3>
     <div class="row">
         <ul id="myDIV">
-            <li class="btn active" 
+            <li class="btn active"
             onclick="getElementById('1').style.display='';
             getElementById('2').style.display='none';
             getElementById('3').style.display='none';
-            ">miêu tả</li> 
+            ">miêu tả</li>
             <!-- https://www.w3schools.com/howto/howto_js_active_element.asp
-          https://www.w3schools.com/howto/howto_js_alert.asp--> 
+          https://www.w3schools.com/howto/howto_js_alert.asp-->
             <li class="btn"
             onclick="getElementById('1').style.display='none';
             getElementById('2').style.display='';
             getElementById('3').style.display='none';
             ">thông số kỹ thuật</li>
-            <li class="btn" style="display: none;" 
+            <li class="btn" style="display: none;"
             onclick="getElementById('1').style.display='none';
             getElementById('2').style.display='none';
             getElementById('3').style.display='';
@@ -781,7 +781,7 @@ for (var i = 0; i < btns.length; i++) {
 <!-------------------------------------------------------------------------------------------------->
 
 <div class="col-s-12 offset-l-1 col-l-22 col-xl-20 offset-xl-2 offset-hg-3 col-hg-18" style=" margin-left: 10%;margin-top:-50px;margin-bottom:120px;">
-    
+
         <h3 class="gl-vspacing-l" style="padding-left:300px">XẾP HẠNG VÀ ĐÁNH GIÁ</h3>
 <?php
 $result=mysqli_query($coon, "SELECT * FROM comments WHERE postid='$id'");
@@ -813,11 +813,11 @@ else echo '/vn/myaccount/login/';
 ?>
 " method="post">
 <!-- Here the shit they must fill out -->
-<input required="required" id="myInput" oninput="myFunctionn()" type="text" name="body" autocomplete="off" minlength="50" style="width: 818; height: 45px; 
+<input required="required" id="myInput" oninput="myFunctionn()" type="text" name="body" autocomplete="off" minlength="50" style="width: 818; height: 45px;
 
 
 
-resize: none;   
+resize: none;
 border-style: solid;background-color: #ffffff;line-height: 16px !important;
 height: 45px;
     line-height: 1.28571;
@@ -853,18 +853,18 @@ text-align: center;
     cursor: pointer;
     line-height: 42px;
     background-size: 16px 14px !important;
-    width: auto !important;"><span style="color: #ffff; font-weight: bold;text-transform: uppercase;font-size: 16px;">GỬI ĐÁNH GIÁ</span></button>  
+    width: auto !important;"><span style="color: #ffff; font-weight: bold;text-transform: uppercase;font-size: 16px;">GỬI ĐÁNH GIÁ</span></button>
 </form>
 <div id="demo">Bài đánh giá của bạn phải có ít nhất 50 ký tự.</div>
-</div> 
+</div>
 
 <!-------------------------------------------------------------------------------------------------->
-        
+
         <div w3-include-html="/vn/include/footer.html"></div>
-                
+
                 <script>
                   includeHTML();
                 </script>
-            
+
             </body>
             </html>

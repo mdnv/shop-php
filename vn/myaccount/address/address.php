@@ -5,8 +5,8 @@ $lastname= $_SESSION["lastname"];
 $email    = $_SESSION["email"];
 $password= $_SESSION["password"];
 
-$coon=mysqli_connect( "localhost", "root", "", "adidas"); 
-mysqli_query($coon, "SET NAMES utf8"); 
+$coon=mysqli_connect("localhost","id12470029_root","password","id12470029_adidas");
+mysqli_query($coon, "SET NAMES utf8");
 $coon->query("set names 'utf8'"); $coon->set_charset("utf8");
 
 $result=mysqli_query($coon, "SELECT * FROM taikhoan WHERE EMAIL = '$email'");
@@ -70,7 +70,7 @@ $result=mysqli_query($coon, "SELECT * FROM taikhoan WHERE EMAIL = '$email'");
             <span class="divider">/</span><a href="<?php echo$_SERVER['HTTP_REFERER']?>" title="Địa Chỉ Đặt Trước">Địa Chỉ Đặt Trước</a>
     </div><!-- END: breadcrumb -->
 </div>
-    
+
 
 
 
@@ -98,7 +98,7 @@ $result=mysqli_query($coon, "SELECT * FROM taikhoan WHERE EMAIL = '$email'");
 </div>
 
 <div class="accountcenter">
-    <form method="post" action="address.php"> 
+    <form method="post" action="address.php">
 
     <div class="formfields_container">
         <h2>SỬA ĐỊA CHỈ</h2>
@@ -106,10 +106,10 @@ $result=mysqli_query($coon, "SELECT * FROM taikhoan WHERE EMAIL = '$email'");
         <div class="formfield_onerow">
             <div class="formfield addressname">
                 <div class="value">
-<?php 
-$result=mysqli_query($coon, "SELECT * FROM taikhoan WHERE EMAIL = '$email'"); 
+<?php
+$result=mysqli_query($coon, "SELECT * FROM taikhoan WHERE EMAIL = '$email'");
 while ($row=mysqli_fetch_assoc($result)) {?>
-                    <input required="required" class="textinput required" id="profile_customer_firstname" type="text" name="addressname"  maxlength="50" value="<?php echo $row['addressname'];?>" placeholder="* Tên Địa Chỉ">      
+                    <input required="required" class="textinput required" id="profile_customer_firstname" type="text" name="addressname"  maxlength="50" value="<?php echo $row['addressname'];?>" placeholder="* Tên Địa Chỉ">
                 </div>
                 <div class="labelwithcaption">
 					<span class="caption">Ví Dụ: Nhà, văn phòng...</span>
@@ -151,7 +151,7 @@ while ($row=mysqli_fetch_assoc($result)) {?>
             <div class="formfield phonenumber">
                 <div class="value">
                     <input required="required" class="textinput required" id="profile_customer_lastname" type="text" name="phonenumber"  maxlength="50" value="<?php echo $row['phonenumber'];?>" placeholder="* Số Di Động">
-<?php } ?>                    
+<?php } ?>
                 </div>
                 <div class="labelwithcaption">
 					<span class="caption">Ví Dụ: 333-333-3333</span>
@@ -160,21 +160,21 @@ while ($row=mysqli_fetch_assoc($result)) {?>
 
         </div>
     </div>
-    
+
     <input class="materialize-input" type="checkbox" id="dwfrm_login_rememberme" name="dwfrm_login_rememberme" value="true" checked="checked"/>
     <label for="dwfrm_login_rememberme" class="materialize-element-box"> Đặt địa chỉ này làm địa chỉ chính của tôi </label>
-    
+
     <br><br><br>
 
     <div class="formactions">
-        <button id="pisubmitid" class="btn_primary" type="submit" value="Submit" title="Gửi đi" name="Submit"><span>Cập nhật địa chỉ đặt trước</span></button>  
+        <button id="pisubmitid" class="btn_primary" type="submit" value="Submit" title="Gửi đi" name="Submit"><span>Cập nhật địa chỉ đặt trước</span></button>
     </div>
-    
+
     <br>
 
     </form>
 
-    
+
 
 
 

@@ -1,9 +1,9 @@
 <?php
 session_start();
 /*
-Một số biến được xác định trước trong PHP là "superglobals-toàn cục", 
-có nghĩa là chúng luôn có thể truy cập, bất kể phạm vi - 
-và bạn có thể truy cập chúng từ bất kỳ hàm, 
+Một số biến được xác định trước trong PHP là "superglobals-toàn cục",
+có nghĩa là chúng luôn có thể truy cập, bất kể phạm vi -
+và bạn có thể truy cập chúng từ bất kỳ hàm,
 lớp hoặc tệp nào mà không phải thực hiện bất kỳ điều gì đặc biệt.
 Các biến superglobal PHP là:
 $GLOBALS
@@ -80,7 +80,7 @@ $_SESSION['breadcrumb_title_1']="Tài Khoản Của Tôi";
 
 </div><!-- END: breadcrumb -->
 </div>
-	
+
 
 
 
@@ -142,21 +142,21 @@ $_SESSION['breadcrumb_title_1']="Tài Khoản Của Tôi";
 <h4 class="title___37UkT">CÁC MỤC ĐÃ XEM GẦN ĐÂY</h4>
     <div id="exampleSlider">
        <div class="MS-content">
-<?php 
+<?php
 
 for ($x = 1; $x <= 12; $x++) {
     if(isset($_COOKIE[$x])) {$COOKIE=$_COOKIE[$x];
     } else {
         $COOKIE=0;
-    } 
+    }
 
-    $conn=mysqli_connect( "localhost", "root", "", "adidas"); 
-mysqli_query($conn, "SET NAMES utf8"); 
-$sql="select * from sanpham where IDSP=$COOKIE"; 
-$query=mysqli_query($conn,$sql); 
-while($row=mysqli_fetch_array($query)) 
+    $conn=mysqli_connect("localhost","id12470029_root","password","id12470029_adidas");
+mysqli_query($conn, "SET NAMES utf8");
+$sql="select * from sanpham where IDSP=$COOKIE";
+$query=mysqli_query($conn,$sql);
+while($row=mysqli_fetch_array($query))
 { // Mở PHP
-		$giaban=$row['GIABAN']; 
+		$giaban=$row['GIABAN'];
 		$giagoc=$row['GIAGOC'];
 ?>
 <div class="item"><div class="items">
@@ -169,7 +169,7 @@ while($row=mysqli_fetch_array($query))
         if(empty($row['AGE']) or $row['AGE']!='infant_toddler'){
             if ($row['GENDER']=="kids"){echo $row['GENDER'].' unisex ';} else {
                 if ($row['GENDER']!="" && $row['GENDER']!="boys" && $row['GENDER']!="girls") echo  $row['GENDER'].'\'s'.' '; else echo  $row['GENDER'].' ';}
-        } 
+        }
         else {
             echo 'infants ';}
         if(!empty($row['BRAND'])) echo $row['BRAND'].' ';
@@ -180,8 +180,8 @@ while($row=mysqli_fetch_array($query))
                   <div class="gl-product-card__details-main">
                   <div class="gl-product-card__name gl-label gl-label--medium" title="<?php echo $row['TENSP'];?>"><?php echo $x.'.'.$row['TENSP'];?></div>
                   <div class="gl-price-container"><span id="red"
-        <?php if(!empty($giagoc)) echo "style=\"color: red\""?>>  
-        <?php  echo number_format($giaban*23000,0,".",","),"₫"?> 
+        <?php if(!empty($giagoc)) echo "style=\"color: red\""?>>
+        <?php  echo number_format($giaban*23000,0,".",","),"₫"?>
         </span><strike><?php if(!empty($giagoc))  echo number_format($giagoc*23000,0,".",","),"₫"?></strike>
     </span></div>
                   </div>
@@ -189,11 +189,11 @@ while($row=mysqli_fetch_array($query))
                   <div class="gl-product-card__reviews-number">
                   <?php
                   $idsp=$row['IDSP'];
-                  $sql="SELECT count(postid) as totalreviews FROM comments WHERE postid='$idsp'"; 
+                  $sql="SELECT count(postid) as totalreviews FROM comments WHERE postid='$idsp'";
                   $result=mysqli_query($conn,$sql);
-                  $row=mysqli_fetch_assoc($result); 
+                  $row=mysqli_fetch_assoc($result);
                   $total_reviews=$row[ 'totalreviews'];
-                  echo $total_reviews; 
+                  echo $total_reviews;
                   ?>
                   </div>
                   </div>

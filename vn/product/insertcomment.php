@@ -14,20 +14,20 @@ $date= $_GET['date'];
 
 // connect to the database
 // kết nối với cơ sở dữ liệu
-$coon=mysqli_connect( "localhost", "root", "", "adidas"); 
-mysqli_query($coon, "SET NAMES utf8"); 
+$coon=mysqli_connect("localhost","id12470029_root","password","id12470029_adidas");
+mysqli_query($coon, "SET NAMES utf8");
 
 // REGISTER USER
 // GHI DANH NGƯỜI DÙNG
 if (isset($_POST['Submit'])) {
-	$coon=mysqli_connect("localhost","root","","adidas");
+	$coon=mysqli_connect("localhost","id12470029_root","password","id12470029_adidas");
 mysqli_query($coon,"SET NAMES utf8");
-$result=mysqli_query($coon, "SELECT count(EMAIL) AS total FROM comments 
-WHERE EMAIL='$email' and postid='$postid'"); 
+$result=mysqli_query($coon, "SELECT count(EMAIL) AS total FROM comments
+WHERE EMAIL='$email' and postid='$postid'");
 $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
 
 
-if($total_records!=0) 
+if($total_records!=0)
 {
 	echo $total_records;
 }
@@ -42,9 +42,9 @@ else
   $body = mysqli_real_escape_string($coon, $_POST['body']);
 
 
-  $result=mysqli_query($coon, " INSERT INTO comments VALUES ('$postid','$author','$email','$body','$date') "); 
+  $result=mysqli_query($coon, " INSERT INTO comments VALUES ('$postid','$author','$email','$body','$date') ");
   }
-  
+
 }
 else
 {

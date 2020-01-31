@@ -14,7 +14,7 @@ $newemail    = "";
 $oldpassword= "";
 $newpassword= "";
 $confirmnewpassword= "";
-$errors = array(); 
+$errors = array();
 /*
 echo '-------------------------------------------------';
 echo 'sau khi gán'.'<br>';
@@ -39,8 +39,8 @@ echo '-------------------------------------------------';*/
 
 // connect to the database
 // kết nối với cơ sở dữ liệu
-$coon=mysqli_connect( "localhost", "root", "", "adidas"); 
-mysqli_query($coon, "SET NAMES utf8"); 
+$coon=mysqli_connect("localhost","id12470029_root","password","id12470029_adidas");
+mysqli_query($coon, "SET NAMES utf8");
 $coon->query("set names 'utf8'"); $coon->set_charset("utf8");
 
 // REGISTER USER
@@ -54,7 +54,7 @@ if (isset($_POST['Submit'])) {
   $oldpassword = mysqli_real_escape_string($coon, $_POST['oldPassword']);
   $newpassword = mysqli_real_escape_string($coon, $_POST['newPassword']);
   $confirmnewpassword = mysqli_real_escape_string($coon, $_POST['confirmNewPwd']);
-  
+
   if ($_SESSION["name"] != $newname) {
     $sql = "UPDATE taikhoan
     SET name = '$newname'
@@ -91,8 +91,8 @@ if (isset($_POST['Submit'])) {
   }*/
 
   if (
-  $_SESSION["password"] == $oldpassword 
-  && $newpassword == $confirmnewpassword 
+  $_SESSION["password"] == $oldpassword
+  && $newpassword == $confirmnewpassword
   && !empty($newpassword)
   && !empty($confirmnewpassword)
   ) {
@@ -102,10 +102,10 @@ if (isset($_POST['Submit'])) {
   $query =mysqli_query($coon,$sql);
   $_SESSION["password"] = $newpassword;
   header("location:/vn/myaccount/login/login_success.php");
-  } 
+  }
   if (
-    $_SESSION["password"] != $oldpassword 
-    && $newpassword == $confirmnewpassword 
+    $_SESSION["password"] != $oldpassword
+    && $newpassword == $confirmnewpassword
     && !empty($newpassword)
     && !empty($confirmnewpassword)
     ) {
@@ -115,8 +115,8 @@ if (isset($_POST['Submit'])) {
       </div>';
   }
   if (
-    $_SESSION["password"] == $oldpassword 
-    && $newpassword != $confirmnewpassword 
+    $_SESSION["password"] == $oldpassword
+    && $newpassword != $confirmnewpassword
     && !empty($newpassword)
     && !empty($confirmnewpassword)
     ) {
@@ -126,8 +126,8 @@ if (isset($_POST['Submit'])) {
       </div>';
   }
   if (
-    $_SESSION["password"] != $oldpassword 
-    && $newpassword != $confirmnewpassword 
+    $_SESSION["password"] != $oldpassword
+    && $newpassword != $confirmnewpassword
     && !empty($newpassword)
     && !empty($confirmnewpassword)
     ) {
@@ -138,4 +138,4 @@ if (isset($_POST['Submit'])) {
   }
 }
 
-// ... 
+// ...

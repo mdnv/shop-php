@@ -9,10 +9,10 @@ require './vendor/autoload.php';
 
 // connect to the database
 // kết nối với cơ sở dữ liệu
-$coon=mysqli_connect( "localhost", "root", "", "adidas"); 
-mysqli_query($coon, "SET NAMES utf8"); 
+$coon=mysqli_connect("localhost","id12470029_root","password","id12470029_adidas");
+mysqli_query($coon, "SET NAMES utf8");
 $coon->query("set names 'utf8'"); $coon->set_charset("utf8");
-	
+
 // REGISTER USER
 // GHI DANH NGƯỜI DÙNG
 if(!empty($_POST["dwfrm_requestpassword_email"])) {
@@ -38,7 +38,7 @@ $sql = "UPDATE taikhoan SET token = '$resetpasswordtoken' WHERE EMAIL = '$reques
 $query =mysqli_query($coon,$sql);
 
 		$sql="SELECT * FROM taikhoan WHERE EMAIL='$requestpassword_email'";
-		
+
 		$result = mysqli_query($coon,$sql);
 		while($row=mysqli_fetch_array($result)){
 			$requestpassword_name=$row['name'];
@@ -59,9 +59,9 @@ try {
 $mail->SMTPSecure = 'tls';
 $mail->Host = "smtp.gmail.com";
 $mail->Mailer = "smtp";
-$mail->Port = 587; 
+$mail->Port = 587;
 $mail->Username = "manh11117@gmail.com";
-$mail->Password = "Ndm0915827299";                                
+$mail->Password = "Ndm0915827299";
 
     //Recipients
     $mail->setFrom('manh11117@gmail.com', 'adidas');
@@ -77,13 +77,13 @@ $mail->Password = "Ndm0915827299";
 	$mail->Body    = '
 <table border="0" width="100%" cellpadding="0" cellspacing="0" style="background:#ebebeb"></table>
 <tr>
-    <td align="left" style="font-family:Arial;font-size:12px;color:#0185cc">                   
+    <td align="left" style="font-family:Arial;font-size:12px;color:#0185cc">
         <a style="color:#0185cc;text-decoration:none" href="http://adidasvn.ddns.net/vn/resetpassword?resetpasswordtoken='.$resetpasswordtoken.'" target="_blank">Tạo mật khẩu mới của bạn ngay bây giờ.</a>
 	</td>
-	<td align="left" style="font-family:Arial;font-size:12px;color:#0185cc">                   
+	<td align="left" style="font-family:Arial;font-size:12px;color:#0185cc">
         <a style="color:#0185cc;text-decoration:none" href="http://adidasvn.ddns.net/vn/resetpassword?resetpasswordtoken='.$resetpasswordtoken.'" target="_blank">&nbsp;| Tạo mật khẩu mới của bạn ngay bây giờ.</a>
     </td>
-    <td align="right" style="font-family:Arial;font-size:12px;color:#0185cc">                      
+    <td align="right" style="font-family:Arial;font-size:12px;color:#0185cc">
         <a href="">Xem email này trực tuyến</a>
     </td>
 </tr>
@@ -112,17 +112,17 @@ $mail->Password = "Ndm0915827299";
 
     $mail->send();
 	echo 'Email đã được gửi';
-	
+
 } catch (Exception $e) {
     echo 'Email không thể gửi. Lỗi PHPMailer: ', $mail->ErrorInfo;
 }
 /* gui mail**************************************************************************/
 		} else {
 			echo 'Không tìm thấy người dùng liên kết đến email đã nhập';
-			
+
 		}
 	}
-	
+
 ?>
 <!--https://stackoverflow.com/questions/8028957/how-to-fix-headers-already-sent-error-in-php-->
 <html>

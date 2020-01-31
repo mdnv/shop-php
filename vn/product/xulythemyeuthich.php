@@ -2,16 +2,16 @@
 session_start();
 $id=$_GET['slot'];
 $email=$_SESSION["email"];
-$coon=mysqli_connect("localhost","root","","adidas");
+$coon=mysqli_connect("localhost","id12470029_root","password","id12470029_adidas");
 mysqli_query($coon,"SET NAMES utf8");
-$result=mysqli_query($coon, "SELECT count(idtrongbangsp) AS total FROM yeuthich 
-WHERE idtrongbangsp='$id' and EMAIL='$email'"); 
+$result=mysqli_query($coon, "SELECT count(idtrongbangsp) AS total FROM yeuthich
+WHERE idtrongbangsp='$id' and EMAIL='$email'");
 $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
 
 
-if($total_records!=0) 
+if($total_records!=0)
 {
-	$sql = "DELETE FROM yeuthich WHERE idtrongbangsp='$id' and EMAIL='$email'"; 
+	$sql = "DELETE FROM yeuthich WHERE idtrongbangsp='$id' and EMAIL='$email'";
     $query =mysqli_query($coon,$sql);
 }
 else
@@ -34,15 +34,15 @@ header("location:/vn/product?slot=$id");
 
 <?php
 
-$result=mysqli_query($coon, "SELECT count(idtrongbangsp) AS total FROM yeuthich 
-WHERE idtrongbangsp='$id' and EMAIL='$email'"); 
+$result=mysqli_query($coon, "SELECT count(idtrongbangsp) AS total FROM yeuthich
+WHERE idtrongbangsp='$id' and EMAIL='$email'");
 $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
 
 
-if($total_records!=0)  
+if($total_records!=0)
 echo '<span class="gl-icon icon icon-heart icon--size-m"></span>';
-    
-else 
+
+else
 echo '<span class="gl-icon icon icon-heart-empty icon--size-m"></span>';
 
 ?>

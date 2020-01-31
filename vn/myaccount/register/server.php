@@ -7,12 +7,12 @@ $name= "";
 $lastname= "";
 $email    = "";
 $password= "";
-$errors = array(); 
+$errors = array();
 
 // connect to the database
 // kết nối với cơ sở dữ liệu
-$coon=mysqli_connect( "localhost", "root", "", "adidas"); 
-mysqli_query($coon, "SET NAMES utf8"); 
+$coon=mysqli_connect("localhost","id12470029_root","password","id12470029_adidas");
+mysqli_query($coon, "SET NAMES utf8");
 
 // REGISTER USER
 // GHI DANH NGƯỜI DÙNG
@@ -25,11 +25,11 @@ if (isset($_POST['Submit'])) {
   $password = mysqli_real_escape_string($coon, $_POST['password']);
 
   $result=mysqli_query($coon, "SELECT count(EMAIL) AS total FROM taikhoan
-  WHERE EMAIL='$email'"); 
+  WHERE EMAIL='$email'");
   $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
-  
 
-  if($total_records!=0) 
+
+  if($total_records!=0)
   {echo '<div class="alert alert-warning hidden title-only" data-component="common/Alert" data-type="warning" id="login-warning-alert" style="display: block;">
     <div class="alert-title">Tạo tài khoản không thành công. email này đã được sử dụng cho tài khoản đã tạo.</div>
     <div class="alert-content"></div>
@@ -47,8 +47,8 @@ if (isset($_POST['Submit'])) {
     $_SESSION["password"] = $password;
         $_SESSION["name"] = $name;
     $_SESSION["lastname"] = $lastname;
-  
+
   }
 }
 
-// ... 
+// ...

@@ -8,8 +8,8 @@ $email    = "";
 $password= "";
 
 
-$coon=mysqli_connect("localhost","root","","adidas");
-mysqli_query($coon, "SET NAMES utf8"); 
+$coon=mysqli_connect("localhost","id12470029_root","password","id12470029_adidas");
+mysqli_query($coon, "SET NAMES utf8");
 $coon->query("set names 'utf8'"); $coon->set_charset("utf8");
 if (isset($_POST['Submit'])) {
     // receive all input values from the form
@@ -28,9 +28,9 @@ if($email==$row['EMAIL']&&($password==$row['PASSWORD'])&&(!empty($_POST['email']
 $a=1;
 
 
-$name=$row['name']; 
+$name=$row['name'];
 
-$lastname=$row['lastname'];  
+$lastname=$row['lastname'];
 
 
 

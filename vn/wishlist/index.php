@@ -1,9 +1,9 @@
-<?php 
+<?php
 session_start();
 $email=$_SESSION["email"];
-$conn=mysqli_connect( "localhost", "root", "", "adidas"); 
-mysqli_query($conn, "SET NAMES utf8"); $sql="SELECT * FROM yeuthich WHERE EMAIL='$email'" ; 
-$result=mysqli_query($conn, "SELECT count(ID) AS total FROM yeuthich WHERE EMAIL='$email'"); 
+$conn=mysqli_connect("localhost","id12470029_root","password","id12470029_adidas");
+mysqli_query($conn, "SET NAMES utf8"); $sql="SELECT * FROM yeuthich WHERE EMAIL='$email'" ;
+$result=mysqli_query($conn, "SELECT count(ID) AS total FROM yeuthich WHERE EMAIL='$email'");
 $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
 $query=mysqli_query($conn,$sql); ?>
 
@@ -227,7 +227,7 @@ $query=mysqli_query($conn,$sql); ?>
 
 
                         <!--googleoff: all-->
-                        
+
                         <!--googleon: all-->
 
 
@@ -246,7 +246,7 @@ $query=mysqli_query($conn,$sql); ?>
 
                                 <!-- show loading icon. -->
 
-                                
+
 
                                 <div id="emptycart_rr">
                                     <!-- Certona will load products in here. -->
@@ -303,7 +303,7 @@ $query=mysqli_query($conn,$sql); ?>
                                 <span>
                                 <?php echo $total_records?> sản phẩm
                                 </span>
-                                </h1> 
+                                </h1>
                             </div>
 
                             <div class="col-2 contionue-shopping-wrapper right">
@@ -323,28 +323,28 @@ $query=mysqli_query($conn,$sql); ?>
                                 <div class="co-pt_table">
                                     <div class="shipment_wrapper">
                                         <div class="delivery-list clear clearfix"> </div>
-                                            
-                                            <?php 
-                                            $tonggiaban=0; 
-                                            $tonggiagoc=0; 
+
+                                            <?php
+                                            $tonggiaban=0;
+                                            $tonggiagoc=0;
                                             while($row=mysqli_fetch_array($query)) {
-                                                 $idtrongbangsp=$row[ 'idtrongbangsp']; 
+                                                 $idtrongbangsp=$row[ 'idtrongbangsp'];
                                             ?>
                                             <div id="shipment_wrapper_0_<?php echo $row['id']?>" class="container clearfix line-item <?php if($row['id']=1) echo " first-item " ?>">
                                                 <div class="imagecolumn left">
                                                     <div class="productimg_container">
-                                                        <?php 
-                                                        $conn1=mysqli_connect( "localhost", "root", "", "adidas"); 
-                                                        mysqli_query($conn1, "SET NAMES utf8"); 
-                                                        $sql1="SELECT * FROM sanpham where IDSP=$idtrongbangsp" ; 
-                                                        $query1=mysqli_query($conn1,$sql1); 
+                                                        <?php
+                                                        $conn1=mysqli_connect("localhost","id12470029_root","password","id12470029_adidas");
+                                                        mysqli_query($conn1, "SET NAMES utf8");
+                                                        $sql1="SELECT * FROM sanpham where IDSP=$idtrongbangsp" ;
+                                                        $query1=mysqli_query($conn1,$sql1);
                                                         ?>
-                                                        <?php while($row=mysqli_fetch_array($query1)) { 
-                                                            $giaban=$row[ 'GIABAN']; 
-                                                            $giagoc=$row[ 'GIAGOC']; ?> 
-                                                            <a href="/vn/product?slot=<?php echo $row['IDSP'] ?>"> 
-                                                            <img src="/images/<?php echo $row['IDSP']?>/<?php echo $row['ANH'] ?>" width="100"> 
-                                                        </a> 
+                                                        <?php while($row=mysqli_fetch_array($query1)) {
+                                                            $giaban=$row[ 'GIABAN'];
+                                                            $giagoc=$row[ 'GIAGOC']; ?>
+                                                            <a href="/vn/product?slot=<?php echo $row['IDSP'] ?>">
+                                                            <img src="/images/<?php echo $row['IDSP']?>/<?php echo $row['ANH'] ?>" width="100">
+                                                        </a>
                                                     </div>
                                                 </div>
                                                 <div class="detailscolumn">
@@ -353,13 +353,13 @@ $query=mysqli_query($conn,$sql); ?>
                                                         <a class="name" href="/vn/product?slot=<?php echo $row['IDSP'] ?>" title="<?php echo $row['TENSP'] ?>">
                                                             <?php echo $row[ 'TENSP'] ?>
                                                         </a>
-                                                        <div class="article "> 
-                                                            <span class="label">Số Sản Phẩm:</span> 
+                                                        <div class="article ">
+                                                            <span class="label">Số Sản Phẩm:</span>
                                                             <span class="value">
-                                                            <?php 
-                                                            echo substr( $row['ANH'],  0, 6) 
+                                                            <?php
+                                                            echo substr( $row['ANH'],  0, 6)
                                                             ?>
-                                                            </span> 
+                                                            </span>
                                                         </div>
                                                         <!-- END: productattributes -->
                                                         <div class="co-product-actions">
@@ -371,7 +371,7 @@ $query=mysqli_query($conn,$sql); ?>
                                                             <button type="submit"><span>Thêm vào túi</span>
                                                             </button>
 			                                                </form>
-                                                            
+
                                                         </div>
                                                     </div>
                                                     <div class="edit_details_container" id="edit_details_container_0_0"></div>
@@ -383,9 +383,9 @@ $query=mysqli_query($conn,$sql); ?>
                                                         </div>
                                                         <div class="sale"
                                                         <span>
-                                                            <?php 
-                                                            if($giagoc!=0) $tonggiagoc+=$giagoc; 
-                                                            else $tonggiagoc+=$giaban; 
+                                                            <?php
+                                                            if($giagoc!=0) $tonggiagoc+=$giagoc;
+                                                            else $tonggiagoc+=$giaban;
                                                             if($giagoc!=0) echo number_format($giagoc*22000,0,".",","). "₫";
                                                             ?>
                                                         </span> </div>
@@ -397,7 +397,7 @@ $query=mysqli_query($conn,$sql); ?>
                                     </div>
                                 </form>
                                 <div class="cart-callout-bars clearfix" data-contentslot="cart-promo-callout" data-component="content/CalloutBar">
-                                    
+
                                 </div>
                             </div>
                             <!-- END products wrapper -->
@@ -419,7 +419,7 @@ $query=mysqli_query($conn,$sql); ?>
                                         <a href="" tabindex="-1">
                                             <button class="co-btn_primary btn_showcart button-ctn button-brd adi-gradient-blue button-full-width button-forward btn btn-cart btn-block" data-track="paypal checkout" type="submit" name="dwfrm_cart_checkoutShortcutPaypal" data-ci-test-id="paypalCheckoutTopButton"> <span>THANH TOÁN</span> </button>
                                         </a>
-                                        
+
                                         <div class="delivery-terms-text"> Bằng cách đặt hàng của bạn, bạn đồng ý với <a href="/vn/dieukhoangiaohang.html">Điều Khoản Vận Chuyển</a> </div>
                                     </div>
                                     <div class="cart-calculation " data-component="" data-ci-test-id="deliveryOrderSummary">
@@ -487,17 +487,17 @@ Tổng Yêu Thích:
             </div>
         </div>
     </div>
-</div>  
-    
+</div>
+
 
 
 
 <div w3-include-html="/vn/include/footer.html"></div>
-				
+
                 <script>
                   includeHTML();
                 </script>
-                
-                
+
+
                     </body>
                     </html>
