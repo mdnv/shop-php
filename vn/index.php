@@ -216,7 +216,7 @@ VALUES
 
 	// PHẦN XỬ LÝ PHP
 	// BƯỚC 1: KẾT NỐI CSDL
-	$conn=mysqli_connect("localhost","id12470029_root","password","id12470029_adidas");
+	$conn=mysqli_connect("localhost","root","password","id12470029_adidas");
 	mysqli_query($conn, "SET NAMES utf8");
 	// BƯỚC 2: TÌM TỔNG SỐ RECORDS
   //$result=mysqli_query($conn, 'select count(idsp) as total from sanpham');

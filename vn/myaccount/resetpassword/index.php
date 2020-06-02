@@ -1,5 +1,5 @@
 <?php
-$conn=mysqli_connect("localhost","id12470029_root","password","id12470029_adidas");
+$conn=mysqli_connect("localhost","root","password","id12470029_adidas");
 mysqli_query($conn, "SET NAMES utf8");
 $resetpasswordtoken=$_GET['resetpasswordtoken'];
 

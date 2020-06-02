@@ -281,7 +281,7 @@ for ($x = 1; $x <= 12; $x++) {
         $COOKIE=0;
     }
 
-    $conn=mysqli_connect("localhost","id12470029_root","password","id12470029_adidas");
+    $conn=mysqli_connect("localhost","root","password","id12470029_adidas");
 mysqli_query($conn, "SET NAMES utf8");
 $sql="select * from sanpham where IDSP=$COOKIE";
 $query=mysqli_query($conn,$sql);

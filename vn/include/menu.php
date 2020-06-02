@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(empty ($_SESSION["email"])) {} else {$email=$_SESSION["email"];}
-$conn=mysqli_connect("localhost","id12470029_root","password","id12470029_adidas");
+$conn=mysqli_connect("localhost","root","password","id12470029_adidas");
 mysqli_query($conn, "SET NAMES utf8");
 $conn->query("set names 'utf8'"); $conn->set_charset("utf8");
 if(empty ($_SESSION["email"])) {} else {

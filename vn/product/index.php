@@ -1,7 +1,7 @@
 <?php
 echo '<br>';
 session_start();
-$conn=mysqli_connect("localhost","id12470029_root","password","id12470029_adidas");
+$conn=mysqli_connect("localhost","root","password","id12470029_adidas");
 mysqli_query($conn, "SET NAMES utf8");
 $id=$_GET['slot'];
 //RECENTLY VIEWED ITEMS
@@ -633,7 +633,7 @@ function showUser(str) {
 <div class="gl-cta gl-cta--icon wishlist___31HQW" onclick="showUser(<?php echo $id?>)">
                 <span class="gl-icon icon <?php
                 $email=$_SESSION["email"];
-                $coon=mysqli_connect("localhost","id12470029_root","password","id12470029_adidas");
+                $coon=mysqli_connect("localhost","root","password","id12470029_adidas");
                 mysqli_query($coon,"SET NAMES utf8");
                 $result=mysqli_query($coon, "SELECT count(idtrongbangsp) AS total FROM yeuthich
                 WHERE idtrongbangsp='$id' and EMAIL='$email'");

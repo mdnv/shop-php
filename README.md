@@ -12,7 +12,7 @@ Since adidas uses ReactJS in the future, this fake version is intended to use Re
 
 ## Configuration
 
-$conn=mysqli_connect("localhost","id12470029_root","password","id12470029_adidas");
+$conn=mysqli_connect("localhost","root","password","id12470029_adidas");
 
 ## Layout
 

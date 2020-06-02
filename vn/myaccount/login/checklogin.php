@@ -8,7 +8,7 @@ $email    = "";
 $password= "";
 
 
-$coon=mysqli_connect("localhost","id12470029_root","password","id12470029_adidas");
+$coon=mysqli_connect("localhost","root","password","id12470029_adidas");
 mysqli_query($coon, "SET NAMES utf8");
 $coon->query("set names 'utf8'"); $coon->set_charset("utf8");
 if (isset($_POST['Submit'])) {

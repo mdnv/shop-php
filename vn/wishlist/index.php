@@ -1,7 +1,7 @@
 <?php
 session_start();
 $email=$_SESSION["email"];
-$conn=mysqli_connect("localhost","id12470029_root","password","id12470029_adidas");
+$conn=mysqli_connect("localhost","root","password","id12470029_adidas");
 mysqli_query($conn, "SET NAMES utf8"); $sql="SELECT * FROM yeuthich WHERE EMAIL='$email'" ;
 $result=mysqli_query($conn, "SELECT count(ID) AS total FROM yeuthich WHERE EMAIL='$email'");
 $row=mysqli_fetch_assoc($result); $total_records=$row[ 'total'];
@@ -334,7 +334,7 @@ $query=mysqli_query($conn,$sql); ?>
                                                 <div class="imagecolumn left">
                                                     <div class="productimg_container">
                                                         <?php
-                                                        $conn1=mysqli_connect("localhost","id12470029_root","password","id12470029_adidas");
+                                                        $conn1=mysqli_connect("localhost","root","password","id12470029_adidas");
                                                         mysqli_query($conn1, "SET NAMES utf8");
                                                         $sql1="SELECT * FROM sanpham where IDSP=$idtrongbangsp" ;
                                                         $query1=mysqli_query($conn1,$sql1);

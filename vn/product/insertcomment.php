@@ -14,13 +14,13 @@ $date= $_GET['date'];
 
 // connect to the database
 // kết nối với cơ sở dữ liệu
-$coon=mysqli_connect("localhost","id12470029_root","password","id12470029_adidas");
+$coon=mysqli_connect("localhost","root","password","id12470029_adidas");
 mysqli_query($coon, "SET NAMES utf8");
 
 // REGISTER USER
 // GHI DANH NGƯỜI DÙNG
 if (isset($_POST['Submit'])) {
-	$coon=mysqli_connect("localhost","id12470029_root","password","id12470029_adidas");
+	$coon=mysqli_connect("localhost","root","password","id12470029_adidas");
 mysqli_query($coon,"SET NAMES utf8");
 $result=mysqli_query($coon, "SELECT count(EMAIL) AS total FROM comments
 WHERE EMAIL='$email' and postid='$postid'");

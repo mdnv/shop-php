@@ -2,7 +2,7 @@
 session_start();
 $id=$_GET['slot'];
 $email=$_SESSION["email"];
-$coon=mysqli_connect("localhost","id12470029_root","password","id12470029_adidas");
+$coon=mysqli_connect("localhost","root","password","id12470029_adidas");
 mysqli_query($coon,"SET NAMES utf8");
 $result=mysqli_query($coon, "SELECT count(idtrongbangsp) AS total FROM yeuthich
 WHERE idtrongbangsp='$id' and EMAIL='$email'");
